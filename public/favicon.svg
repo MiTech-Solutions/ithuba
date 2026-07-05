@@ -1,4 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="8" fill="#2d6330"/>
-  <text x="16" y="22" font-size="16" text-anchor="middle" font-family="serif" fill="#e5b020" font-weight="bold">I</text>
+  <rect x="15" y="7" width="2" height="18" rx="1" fill="#e5b020"/>
+  <path d="M14 8 Q8 12 7 23 L14 23 Z" fill="#ffffff" opacity="0.92"/>
+  <path d="M18 8 Q24 12 25 23 L18 23 Z" fill="#ffffff" opacity="0.75"/>
+  <ellipse cx="16" cy="6" rx="2.5" ry="3.5" fill="#e5b020" transform="rotate(-18 16 6)"/>
+  <ellipse cx="16" cy="6" rx="2.5" ry="3.5" fill="#c8942a" opacity="0.45" transform="rotate(18 16 6)"/>
+  <rect x="15.2" y="3.5" width="1.6" height="4" rx="0.8" fill="#e5b020"/>
 </svg>

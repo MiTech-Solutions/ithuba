@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Sun, Moon, Menu, X, BookOpen } from "lucide-react";
+import { Sun, Moon, Menu, X } from "lucide-react";
 import { useDarkMode } from "../../hooks/useDarkMode";
 
 const navItems = [
-  { label: "Bursaries",       path: "/bursaries" },
-  { label: "Categories",      path: "/categories" },
-  { label: "About",           path: "/about" },
-  { label: "Contact",         path: "/contact" },
+  { label: "Bursaries",        path: "/bursaries" },
+  { label: "Categories",       path: "/categories" },
+  { label: "About",            path: "/about" },
+  { label: "Contact",          path: "/contact" },
   { label: "Submit a Bursary", path: "/submit" },
 ];
 
@@ -24,16 +24,15 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-forest-200 dark:border-forest-800 bg-cream/90 dark:bg-forest-950/90 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
 
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-forest-600 dark:bg-forest-500 transition group-hover:bg-forest-700 dark:group-hover:bg-forest-400">
-            <BookOpen size={16} className="text-white" />
-          </div>
-          <span className="font-display text-xl font-semibold text-forest-900 dark:text-forest-50 tracking-tight">
-            Ithuba
-          </span>
+        <Link to="/" className="flex items-center group" aria-label="Ithuba home">
+          <img
+            src="/logo.svg"
+            alt="Ithuba Bursary Directory"
+            className="h-14 w-auto dark:brightness-[1.15]"
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -47,7 +46,6 @@ export default function Navbar() {
 
         {/* Right actions */}
         <div className="flex items-center gap-3">
-          {/* Theme toggle */}
           <button
             onClick={() => setDark(!dark)}
             aria-label="Toggle theme"
@@ -56,7 +54,6 @@ export default function Navbar() {
             {dark ? <Sun size={16} /> : <Moon size={16} />}
           </button>
 
-          {/* Browse CTA */}
           <Link
             to="/bursaries"
             className="hidden sm:inline-flex items-center rounded-xl bg-forest-600 dark:bg-forest-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-forest-700 dark:hover:bg-forest-400"
@@ -64,7 +61,6 @@ export default function Navbar() {
             Browse bursaries
           </Link>
 
-          {/* Mobile menu toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="flex h-9 w-9 items-center justify-center rounded-xl border border-forest-200 dark:border-forest-700 bg-white dark:bg-forest-900 text-forest-600 dark:text-forest-300 md:hidden"
@@ -102,3 +98,4 @@ export default function Navbar() {
     </header>
   );
 }
+

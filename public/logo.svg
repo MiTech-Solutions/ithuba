@@ -1,0 +1,36 @@
+<svg width="100%" viewBox="0 0 340 80" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Ithuba — Bursary Directory</title>
+  <desc>Ithuba bursary directory landscape logo</desc>
+
+  <defs>
+    <style>
+      .wordmark { font-family: Georgia, Cambria, serif; font-size: 21px; font-weight: 600; fill: #1e3f21; letter-spacing: -0.3px; }
+      .tagline  { font-family: Inter, system-ui, sans-serif; font-size: 6.5px; font-weight: 400; fill: #3f7e42; letter-spacing: 0.12em; }
+      @media (prefers-color-scheme: dark) {
+        .wordmark { fill: #c2dbc3; }
+        .tagline  { fill: #639f65; }
+      }
+    </style>
+  </defs>
+
+  <!-- Icon mark -->
+  <g transform="translate(0, 8)">
+    <rect x="0" y="0" width="48" height="48" rx="10" fill="#2d6330"/>
+    <rect x="23" y="10" width="2" height="28" rx="1" fill="#e5b020"/>
+    <path d="M22 11 Q12 17 11 34 L22 34 Z" fill="#ffffff" opacity="0.92"/>
+    <path d="M26 11 Q36 17 37 34 L26 34 Z" fill="#ffffff" opacity="0.75"/>
+    <ellipse cx="24" cy="8" rx="3.5" ry="5" fill="#e5b020" transform="rotate(-18 24 8)"/>
+    <ellipse cx="24" cy="8" rx="3.5" ry="5" fill="#c8942a" opacity="0.45" transform="rotate(18 24 8)"/>
+    <rect x="23.2" y="5" width="1.6" height="6" rx="0.8" fill="#e5b020"/>
+  </g>
+
+  <!-- Divider -->
+  <rect x="58" y="12" width="1" height="44" rx="0.5" fill="#96c097" opacity="0.4"/>
+
+  <!-- Wordmark -->
+  <text x="68" y="42" class="wordmark">Ithuba</text>
+
+  <!-- Tagline -->
+  <text x="70" y="54" class="tagline">BURSARY DIRECTORY</text>
+
+</svg>

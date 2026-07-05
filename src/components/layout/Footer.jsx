@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { BookOpen } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -9,19 +8,18 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2.5">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-forest-600 dark:bg-forest-500">
-                <BookOpen size={16} className="text-white" />
-              </div>
-              <span className="font-display text-xl font-semibold text-forest-900 dark:text-forest-50">
-                Ithuba
-              </span>
-            </div>
-            <p className="mt-3 max-w-xs text-sm leading-6 text-forest-600 dark:text-forest-400">
+            <Link to="/" aria-label="Ithuba home">
+              <img
+                src="/logo.svg"
+                alt="Ithuba Bursary Directory"
+                className="h-14 w-auto dark:brightness-[1.15]"
+              />
+            </Link>
+            <p className="mt-4 max-w-xs text-sm leading-6 text-forest-600 dark:text-forest-400">
               South Africa's free bursary directory. Helping students find
               funding opportunities to open doors to education.
             </p>
-            <p className="mt-4 text-xs text-forest-500 dark:text-forest-500">
+            <p className="mt-3 text-xs text-forest-500 dark:text-forest-500">
               Ithuba means <em>opportunity</em> in Zulu and Xhosa.
             </p>
           </div>
@@ -46,6 +44,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-forest-600 dark:text-forest-400">
               <li><Link to="/about" className="hover:text-forest-900 dark:hover:text-white transition">About</Link></li>
               <li><Link to="/contact" className="hover:text-forest-900 dark:hover:text-white transition">Contact</Link></li>
+              <li><Link to="/api-docs" className="hover:text-forest-900 dark:hover:text-white transition">API</Link></li>
               <li><Link to="/submit" className="hover:text-forest-900 dark:hover:text-white transition">Submit a Bursary</Link></li>
               <li><Link to="/privacy-policy" className="hover:text-forest-900 dark:hover:text-white transition">Privacy Policy</Link></li>
               <li><Link to="/terms" className="hover:text-forest-900 dark:hover:text-white transition">Terms</Link></li>

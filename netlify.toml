@@ -1,0 +1,26 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[dev]
+  command = "npm run dev"
+  port = 8888
+  targetPort = 5173
+
+# SPA routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# API routes — must come before the SPA catch-all
+[[redirects]]
+  from = "/api/bursaries"
+  to = "/.netlify/functions/bursaries"
+  status = 200
+
+[[redirects]]
+  from = "/api/bursaries/*"
+  to = "/.netlify/functions/bursaries/:splat"
+  status = 200
