@@ -31,7 +31,7 @@ export default function Navbar() {
           <img
             src="/logo.svg"
             alt="Ithuba Bursary Directory"
-            className="h-14 w-auto dark:brightness-[1.15]"
+            className="h-10 w-auto dark:brightness-[1.15]"
           />
         </Link>
 

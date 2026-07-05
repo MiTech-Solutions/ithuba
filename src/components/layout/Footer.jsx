@@ -12,7 +12,7 @@ export default function Footer() {
               <img
                 src="/logo.svg"
                 alt="Ithuba Bursary Directory"
-                className="h-14 w-auto dark:brightness-[1.15]"
+                className="h-10 w-auto dark:brightness-[1.15]"
               />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-6 text-forest-600 dark:text-forest-400">
