@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
+  <url><loc>https://ithuba.app/</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://ithuba.app/bursaries</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ithuba.app/categories</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithuba.app/submit</loc><lastmod>2026-06-25</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ithuba.app/about</loc><lastmod>2026-06-25</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+
+  <!-- Funder type categories -->
+  <url><loc>https://ithuba.app/bursaries/type/government</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithuba.app/bursaries/type/corporate</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithuba.app/bursaries/type/ngo</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- Field of study categories -->
+  <url><loc>https://ithuba.app/bursaries/field/engineering</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithuba.app/bursaries/field/finance</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithuba.app/bursaries/field/it</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithuba.app/bursaries/field/medicine</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithuba.app/bursaries/field/business</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/field/law</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/field/teaching</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/field/science</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- Province categories -->
+  <url><loc>https://ithuba.app/bursaries/province/national</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithuba.app/bursaries/province/gauteng</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/province/western-cape</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/province/kwazulu-natal</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/province/eastern-cape</loc><lastmod>2026-06-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+  <!-- Individual bursary pages -->
+  <url><loc>https://ithuba.app/bursaries/allan-gray-orbis-foundation-bursary</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/sasol-bursary-programme</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/eskom-bursary</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/nsfas</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/anglo-american-bursary</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/standard-bank-bursary</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/nedbank-bursary-programme</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/department-of-health-bursary</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/mtn-bursary</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/old-mutual-bursary</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/investec-bursary</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/fnb-bursary-programme</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/absa-bank-bursary</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/transnet-bursary</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/pwc-bursary</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/deloitte-bursary</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/seta-bursaries</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/telkom-foundation-bursary</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/vodacom-bursary</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithuba.app/bursaries/rhodes-university-council-bursary</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+</urlset>
