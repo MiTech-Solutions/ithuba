@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-const SHEET_ID    = "1QB7gX3s4Xp6u-T__okl1vr4cwHx1EJbWLX9f0pDx7N0";
-const API_KEY     = "AIzaSyBsrEpI3hkgRTVZtzmWYu7wOFU8Cmocw-8";
-const TAB         = "Published";
+const SHEET_ID  = import.meta.env.VITE_GOOGLE_SHEET_ID;
+const API_KEY   = import.meta.env.VITE_GOOGLE_SHEETS_API_KEY;
+const TAB       = "Published";
 const CACHE_KEY   = "ithuba_bursaries_cache";
 
 // In-memory cache so navigating between pages doesn't re-fetch

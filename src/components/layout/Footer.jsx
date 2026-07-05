@@ -45,6 +45,7 @@ export default function Footer() {
             </p>
             <ul className="mt-4 space-y-3 text-sm text-forest-600 dark:text-forest-400">
               <li><Link to="/about" className="hover:text-forest-900 dark:hover:text-white transition">About</Link></li>
+              <li><Link to="/contact" className="hover:text-forest-900 dark:hover:text-white transition">Contact</Link></li>
               <li><Link to="/submit" className="hover:text-forest-900 dark:hover:text-white transition">Submit a Bursary</Link></li>
               <li><Link to="/privacy-policy" className="hover:text-forest-900 dark:hover:text-white transition">Privacy Policy</Link></li>
               <li><Link to="/terms" className="hover:text-forest-900 dark:hover:text-white transition">Terms</Link></li>

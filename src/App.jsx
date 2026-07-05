@@ -13,6 +13,7 @@ import Submit from "./pages/Submit";
 import About from "./pages/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
               <Route path="/about"                         element={<About />} />
               <Route path="/privacy-policy"                element={<PrivacyPolicy />} />
               <Route path="/terms"                         element={<Terms />} />
+              <Route path="/contact"                       element={<Contact />} />
               <Route path="*"                              element={<NotFound />} />
             </Routes>
           </main>

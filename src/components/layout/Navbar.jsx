@@ -4,9 +4,10 @@ import { Sun, Moon, Menu, X, BookOpen } from "lucide-react";
 import { useDarkMode } from "../../hooks/useDarkMode";
 
 const navItems = [
-  { label: "Bursaries", path: "/bursaries" },
-  { label: "Categories", path: "/categories" },
-  { label: "About", path: "/about" },
+  { label: "Bursaries",       path: "/bursaries" },
+  { label: "Categories",      path: "/categories" },
+  { label: "About",           path: "/about" },
+  { label: "Contact",         path: "/contact" },
   { label: "Submit a Bursary", path: "/submit" },
 ];
 

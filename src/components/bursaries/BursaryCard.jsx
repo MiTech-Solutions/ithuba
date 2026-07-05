@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { MapPin, GraduationCap, Building2, Calendar, ArrowRight } from "lucide-react";
+import { MapPin, GraduationCap, Building2, Calendar, ArrowRight, Share2, Check } from "lucide-react";
 import { slugify } from "../../utils/slug";
 
 const typeColors = {
@@ -9,26 +10,67 @@ const typeColors = {
 };
 
 export default function BursaryCard({ bursary }) {
-  const typeLabel   = bursary.funder_type
+  const [shared, setShared] = useState(false);
+
+  const typeLabel  = bursary.funder_type
     ? bursary.funder_type.charAt(0).toUpperCase() + bursary.funder_type.slice(1)
     : "Other";
-  const colorClass  = typeColors[bursary.funder_type?.toLowerCase()] || typeColors.ngo;
-  const detailPath  = `/bursaries/${slugify(bursary.name)}`;
+  const colorClass = typeColors[bursary.funder_type?.toLowerCase()] || typeColors.ngo;
+  const detailPath = `/bursaries/${slugify(bursary.name)}`;
+  const fullUrl    = `https://ithuba.app${detailPath}`;
+
+  async function handleShare(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const shareData = {
+      title: bursary.name,
+      text:  `Check out this bursary: ${bursary.name} by ${bursary.funder}`,
+      url:   fullUrl,
+    };
+
+    try {
+      if (navigator.share) {
+        // Native share sheet (mobile)
+        await navigator.share(shareData);
+      } else {
+        // Fallback: copy to clipboard
+        await navigator.clipboard.writeText(fullUrl);
+        setShared(true);
+        setTimeout(() => setShared(false), 2000);
+      }
+    } catch {}
+  }
 
   return (
     <article className="group flex flex-col rounded-2xl border border-forest-200 dark:border-forest-800 bg-white dark:bg-forest-900 transition hover:border-forest-400 dark:hover:border-forest-600 hover:shadow-md">
       <div className="flex flex-col flex-1 p-5">
 
-        {/* Badges */}
-        <div className="flex flex-wrap items-center gap-2 mb-3">
-          <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${colorClass}`}>
-            {typeLabel}
-          </span>
-          {bursary.featured === "true" && (
-            <span className="inline-flex items-center rounded-full bg-gold-100 dark:bg-gold-900/40 px-2.5 py-0.5 text-xs font-medium text-gold-700 dark:text-gold-300">
-              ★ Featured
+        {/* Header row — badges + share button */}
+        <div className="flex items-start justify-between gap-2 mb-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${colorClass}`}>
+              {typeLabel}
             </span>
-          )}
+            {bursary.featured === "true" && (
+              <span className="inline-flex items-center rounded-full bg-gold-100 dark:bg-gold-900/40 px-2.5 py-0.5 text-xs font-medium text-gold-700 dark:text-gold-300">
+                ★ Featured
+              </span>
+            )}
+          </div>
+
+          {/* Share button */}
+          <button
+            onClick={handleShare}
+            title={shared ? "Link copied!" : "Share this bursary"}
+            className={`shrink-0 flex h-7 w-7 items-center justify-center rounded-lg border transition ${
+              shared
+                ? "border-forest-400 bg-forest-100 dark:bg-forest-800 text-forest-600 dark:text-forest-300"
+                : "border-forest-200 dark:border-forest-700 bg-transparent text-forest-400 dark:text-forest-500 hover:border-forest-400 dark:hover:border-forest-500 hover:text-forest-700 dark:hover:text-forest-200"
+            }`}
+          >
+            {shared ? <Check size={13} /> : <Share2 size={13} />}
+          </button>
         </div>
 
         {/* Title */}
@@ -85,7 +127,7 @@ export default function BursaryCard({ bursary }) {
         {/* Spacer */}
         <div className="flex-1" />
 
-        {/* Link to detail page */}
+        {/* View details link */}
         <Link
           to={detailPath}
           className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-forest-600 dark:text-forest-400 transition hover:text-forest-900 dark:hover:text-white group-hover:gap-2.5"
