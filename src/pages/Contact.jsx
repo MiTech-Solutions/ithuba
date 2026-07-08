@@ -62,7 +62,7 @@ export default function Contact() {
           name="description"
           content="Get in touch with the Ithuba team. Questions about bursary listings, submissions, or the directory? We'd love to hear from you."
         />
-        <link rel="canonical" href="https://ithuba.app/contact" />
+        <link rel="canonical" href="https://ithubahub.co.za/contact" />
       </Helmet>
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
@@ -94,10 +94,10 @@ export default function Contact() {
                 <p className="text-sm font-semibold text-forest-800 dark:text-forest-200">Email</p>
               </div>
               <a
-                href="mailto:info@ithuba.app"
+                href="mailto:info@ithubahub.co.za"
                 className="text-sm text-forest-600 dark:text-forest-400 hover:text-forest-900 dark:hover:text-white transition underline underline-offset-2"
               >
-                info@ithuba.app
+                info@ithubahub.co.za
               </a>
             </div>
 

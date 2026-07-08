@@ -93,7 +93,7 @@ exports.handler = async function (event) {
   allBursaries = allBursaries.map((b) => ({
     ...b,
     slug: slugify(b.name),
-    url: `https://ithuba.app/bursaries/${slugify(b.name)}`,
+    url: `https://ithubahub.co.za/bursaries/${slugify(b.name)}`,
   }));
 
   // Apply filters from query params
@@ -148,8 +148,8 @@ exports.handler = async function (event) {
         count:  paged.length,
         limit,
         offset,
-        source: "Ithuba Bursary Directory — https://ithuba.app",
-        docs:   "https://ithuba.app/api-docs",
+        source: "Ithuba Bursary Directory — https://ithubahub.co.za",
+        docs:   "https://ithubahub.co.za/api-docs",
       },
       data: paged,
     }),

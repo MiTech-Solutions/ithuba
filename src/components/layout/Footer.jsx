@@ -54,7 +54,16 @@ export default function Footer() {
 
         <div className="mt-10 border-t border-forest-200 dark:border-forest-800 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <p className="text-xs text-forest-500 dark:text-forest-500">
-            © {new Date().getFullYear()} Ithuba. All rights reserved.
+            © {new Date().getFullYear()} Ithuba by{" "}
+            <a
+              href="https://www.mitechsolutions.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-forest-300 dark:hover:text-forest-300 transition underline underline-offset-2"
+            >
+              MiTechSolutions
+            </a>
+            . All rights reserved.
           </p>
           <p className="text-xs text-forest-500 dark:text-forest-500">
             Bursary information is provided for reference only. Always verify

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MapPin, GraduationCap, Building2, Calendar, ArrowRight, Share2, Check } from "lucide-react";
 import { slugify } from "../../utils/slug";
+import { deadlineBadge } from "../../utils/deadline";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
 
 const typeColors = {
   government: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
@@ -9,32 +11,33 @@ const typeColors = {
   ngo:        "bg-forest-100 text-forest-700 dark:bg-forest-800 dark:text-forest-300",
 };
 
-export default function BursaryCard({ bursary }) {
-  const [shared, setShared] = useState(false);
+export default function BursaryCard({ bursary, index = 0 }) {
+  const [shared, setShared]       = useState(false);
+  const [cardRef, visible]        = useScrollReveal();
 
-  const typeLabel  = bursary.funder_type
+  const typeLabel   = bursary.funder_type
     ? bursary.funder_type.charAt(0).toUpperCase() + bursary.funder_type.slice(1)
     : "Other";
-  const colorClass = typeColors[bursary.funder_type?.toLowerCase()] || typeColors.ngo;
-  const detailPath = `/bursaries/${slugify(bursary.name)}`;
-  const fullUrl    = `https://ithuba.app${detailPath}`;
+  const colorClass  = typeColors[bursary.funder_type?.toLowerCase()] || typeColors.ngo;
+  const detailPath  = `/bursaries/${slugify(bursary.name)}`;
+  const fullUrl     = `https://ithubahub.co.za${detailPath}`;
+  const badge       = deadlineBadge(bursary.deadline);
+
+  // Stagger delay capped at 300ms so late cards don't wait too long
+  const delay = Math.min(index * 60, 300);
 
   async function handleShare(e) {
     e.preventDefault();
     e.stopPropagation();
-
     const shareData = {
       title: bursary.name,
       text:  `Check out this bursary: ${bursary.name} by ${bursary.funder}`,
       url:   fullUrl,
     };
-
     try {
       if (navigator.share) {
-        // Native share sheet (mobile)
         await navigator.share(shareData);
       } else {
-        // Fallback: copy to clipboard
         await navigator.clipboard.writeText(fullUrl);
         setShared(true);
         setTimeout(() => setShared(false), 2000);
@@ -43,7 +46,15 @@ export default function BursaryCard({ bursary }) {
   }
 
   return (
-    <article className="group flex flex-col rounded-2xl border border-forest-200 dark:border-forest-800 bg-white dark:bg-forest-900 transition hover:border-forest-400 dark:hover:border-forest-600 hover:shadow-md">
+    <article
+      ref={cardRef}
+      style={{
+        opacity:          visible ? 1 : 0,
+        transform:        visible ? "translateY(0)" : "translateY(20px)",
+        transition:       `opacity 0.45s ease ${delay}ms, transform 0.45s ease ${delay}ms`,
+      }}
+      className="group flex flex-col rounded-2xl border border-forest-200 dark:border-forest-800 bg-white dark:bg-forest-900 transition-[border-color,box-shadow,translate] duration-300 hover:border-forest-400 dark:hover:border-forest-600 hover:shadow-xl hover:shadow-forest-900/10 hover:-translate-y-1"
+    >
       <div className="flex flex-col flex-1 p-5">
 
         {/* Header row — badges + share button */}
@@ -55,6 +66,12 @@ export default function BursaryCard({ bursary }) {
             {bursary.featured === "true" && (
               <span className="inline-flex items-center rounded-full bg-gold-100 dark:bg-gold-900/40 px-2.5 py-0.5 text-xs font-medium text-gold-700 dark:text-gold-300">
                 ★ Featured
+              </span>
+            )}
+            {/* Closing soon / closed badge */}
+            {badge && (
+              <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs ${badge.classes}`}>
+                ⏱ {badge.label}
               </span>
             )}
           </div>
@@ -102,7 +119,7 @@ export default function BursaryCard({ bursary }) {
             </div>
           )}
           {bursary.deadline && (
-            <div className="flex items-center gap-1.5 text-xs text-forest-600 dark:text-forest-400">
+            <div className={`flex items-center gap-1.5 text-xs ${badge ? "font-medium text-forest-700 dark:text-forest-200" : "text-forest-600 dark:text-forest-400"}`}>
               <Calendar size={12} className="shrink-0" />
               <span className="truncate">Closes {bursary.deadline}</span>
             </div>
@@ -124,10 +141,8 @@ export default function BursaryCard({ bursary }) {
           </p>
         )}
 
-        {/* Spacer */}
         <div className="flex-1" />
 
-        {/* View details link */}
         <Link
           to={detailPath}
           className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-forest-600 dark:text-forest-400 transition hover:text-forest-900 dark:hover:text-white group-hover:gap-2.5"

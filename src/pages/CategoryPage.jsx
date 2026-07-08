@@ -30,7 +30,7 @@ export default function CategoryPage() {
 
   const filtered = bursaries.filter((b) => matchesCategory(b, dimension, slug));
 
-  const canonicalUrl = `https://ithuba.app/bursaries/${dimension}/${slug}`;
+  const canonicalUrl = `https://ithubahub.co.za/bursaries/${dimension}/${slug}`;
 
   // ── JSON-LD ItemList for this category ────────────────────────────────────
   const jsonLd = {
@@ -45,7 +45,7 @@ export default function CategoryPage() {
       "position": i + 1,
       "name": b.name,
       "description": b.description || `${b.name} offered by ${b.funder}`,
-      "url": `https://ithuba.app/bursaries/${slug}`,
+      "url": `https://ithubahub.co.za/bursaries/${slug}`,
     })),
   };
 
@@ -58,6 +58,7 @@ export default function CategoryPage() {
         <meta property="og:title" content={`${category.label} South Africa | Ithuba`} />
         <meta property="og:description" content={category.metaDescription} />
         <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content="https://ithubahub.co.za/logo.svg" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
@@ -128,7 +129,7 @@ export default function CategoryPage() {
         {!loading && !error && filtered.length > 0 && (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((b, i) => (
-              <BursaryCard key={b.id || i} bursary={b} />
+              <BursaryCard key={b.id || i} bursary={b} index={i} />
             ))}
           </div>
         )}

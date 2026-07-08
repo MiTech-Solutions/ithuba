@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Search, BookOpen, Users, Star, Briefcase, GraduationCap, MapPin } from "lucide-react";
 import { useBursaries } from "../hooks/useBursaries";
 import { matchesCategory } from "../data/categories";
@@ -8,6 +9,84 @@ import BursaryCard from "../components/bursaries/BursaryCard";
 const HERO_IMG         = "https://images.unsplash.com/photo-1497271679421-ce9c3d6a31da?q=80&w=1471&auto=format&fit=crop";
 const HOW_IT_WORKS_IMG = "https://images.unsplash.com/photo-1683530014248-a085edbfc942?q=80&w=1470&auto=format&fit=crop";
 const CATEGORIES_IMG   = "https://images.unsplash.com/photo-1595239094544-cd47f94236d7?q=80&w=1470&auto=format&fit=crop";
+
+// ── Animated count-up hook ────────────────────────────────────────────────────
+function useCountUp(target, duration = 1800) {
+  const [value, setValue] = useState(0);
+  const rafRef = useRef(null);
+
+  useEffect(() => {
+    if (target === null) return;
+    const start     = performance.now();
+    const from      = 0;
+    const to        = typeof target === "number" ? target : null;
+    if (to === null) { setValue(target); return; }
+
+    function tick(now) {
+      const elapsed  = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const eased    = 1 - Math.pow(1 - progress, 3);
+      setValue(Math.round(from + (to - from) * eased));
+      if (progress < 1) rafRef.current = requestAnimationFrame(tick);
+    }
+
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [target, duration]);
+
+  return value;
+}
+
+// ── Stat item — slides in from right, counts up ───────────────────────────────
+function StatItem({ label, target, suffix = "", delay = 0 }) {
+  const ref             = useRef(null);
+  const [visible, setVisible] = useState(false);
+  const count           = useCountUp(visible ? (typeof target === "number" ? target : null) : null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
+      { threshold: 0.4 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className="text-center transition-all duration-700"
+      style={{
+        opacity:    visible ? 1 : 0,
+        transform:  visible ? "translateX(0)" : "translateX(40px)",
+        transitionDelay: `${delay}ms`,
+      }}
+    >
+      <p className="text-3xl font-bold text-forest-800 dark:text-forest-100 tabular-nums">
+        {typeof target === "number" ? count : target}{suffix}
+      </p>
+      <p className="text-xs text-forest-500 dark:text-forest-400 mt-1 tracking-wide">{label}</p>
+    </div>
+  );
+}
+
+// ── Stats bar ─────────────────────────────────────────────────────────────────
+function StatsBar({ total }) {
+  return (
+    <section className="border-b border-forest-200 dark:border-forest-800 bg-white dark:bg-forest-900">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-3 gap-6 divide-x divide-forest-100 dark:divide-forest-800">
+          <StatItem label="Bursaries listed" target={total ?? 0} delay={0} />
+          <StatItem label="Funder types"     target={3}          delay={150} />
+          <StatItem label="Fields of study"  target={12}         suffix="+" delay={300} />
+        </div>
+      </div>
+    </section>
+  );
+}
 
 const HIGHLIGHT_CATEGORIES = [
   { dimension: "type",     slug: "government",   label: "Government",   icon: Briefcase },
@@ -34,10 +113,10 @@ export default function Home() {
       <Helmet>
         <title>Ithuba — South Africa's Free Bursary Directory</title>
         <meta name="description" content="Find bursaries and funding opportunities for South African students. Search government, corporate, and NGO bursaries by field of study, province, and study level. Free and updated regularly." />
-        <link rel="canonical" href="https://ithuba.app/" />
+        <link rel="canonical" href="https://ithubahub.co.za/" />
         <meta property="og:title" content="Ithuba — South Africa's Free Bursary Directory" />
         <meta property="og:description" content="Find bursaries and funding opportunities for South African students. Free, searchable, and updated regularly." />
-        <meta property="og:url" content="https://ithuba.app/" />
+        <meta property="og:url" content="https://ithubahub.co.za/" />
         <meta property="og:image" content={HERO_IMG} />
       </Helmet>
 
@@ -57,23 +136,31 @@ export default function Home() {
 
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 w-full">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-400/10 px-4 py-1.5 text-sm text-gold-300">
+            <div
+              className="inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-400/10 px-4 py-1.5 text-sm text-gold-300 animate-[fadeSlideUp_0.5s_ease_0.1s_both]"
+            >
               <Star size={13} fill="currentColor" />
               Free for all South African students
             </div>
-            <h1 className="mt-6 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+            <h1
+              className="mt-6 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl animate-[fadeSlideUp_0.5s_ease_0.25s_both]"
+            >
               Your opportunity
               <span className="block text-gold-400"> starts here.</span>
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-forest-200">
+            <p
+              className="mt-5 max-w-xl text-lg leading-8 text-forest-200 animate-[fadeSlideUp_0.5s_ease_0.4s_both]"
+            >
               Ithuba is South Africa's free bursary directory. Search funding
               opportunities from government, corporate, and NGO funders — all
               in one place.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div
+              className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center animate-[fadeSlideUp_0.5s_ease_0.55s_both]"
+            >
               <Link
                 to="/bursaries"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gold-500 px-6 py-3.5 text-sm font-semibold text-forest-950 transition hover:bg-gold-400"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gold-500 px-6 py-3.5 text-sm font-semibold text-forest-950 transition hover:bg-gold-400 hover:shadow-lg hover:shadow-gold-500/25"
               >
                 <Search size={16} /> Browse all bursaries
               </Link>
@@ -89,22 +176,7 @@ export default function Home() {
       </section>
 
       {/* ── Stats bar ────────────────────────────────────────────────── */}
-      <section className="border-b border-forest-200 dark:border-forest-800 bg-white dark:bg-forest-900">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 gap-4 text-center">
-            {[
-              { label: "Bursaries listed", value: loading ? "—" : bursaries.length },
-              { label: "Funder types",     value: "3" },
-              { label: "Fields of study",  value: "12+" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <p className="text-2xl font-bold text-forest-800 dark:text-forest-100">{stat.value}</p>
-                <p className="text-xs text-forest-500 dark:text-forest-400 mt-0.5">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatsBar total={loading ? null : bursaries.length} />
 
       {/* ── Featured bursaries ───────────────────────────────────────── */}
       {(loading || featured.length > 0) && (
@@ -126,7 +198,7 @@ export default function Home() {
             </div>
           ) : (
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {featured.map((b, i) => <BursaryCard key={b.id || i} bursary={b} />)}
+              {featured.map((b, i) => <BursaryCard key={b.id || i} bursary={b} index={i} />)}
             </div>
           )}
           <div className="mt-8 text-center">

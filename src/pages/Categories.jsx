@@ -31,7 +31,7 @@ export default function Categories() {
     "name": "Bursary Categories — Ithuba",
     "description":
       "Browse South African bursaries by funder type, field of study, and province.",
-    "url": "https://ithuba.app/categories",
+    "url": "https://ithubahub.co.za/categories",
   };
 
   return (
@@ -42,10 +42,11 @@ export default function Categories() {
           name="description"
           content="Browse South African bursaries by category — government, corporate, NGO, engineering, finance, IT, medicine, Gauteng, Western Cape, and more."
         />
-        <link rel="canonical" href="https://ithuba.app/categories" />
+        <link rel="canonical" href="https://ithubahub.co.za/categories" />
         <meta property="og:title" content="Bursary Categories South Africa | Ithuba" />
         <meta property="og:description" content="Browse South African bursaries by funder type, field of study, and province." />
-        <meta property="og:url" content="https://ithuba.app/categories" />
+        <meta property="og:url" content="https://ithubahub.co.za/categories" />
+        <meta property="og:image" content="https://ithubahub.co.za/logo.svg" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 

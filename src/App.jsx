@@ -16,6 +16,7 @@ import Terms from "./pages/Terms";
 import Contact from "./pages/Contact";
 import ApiDocs from "./pages/ApiDocs";
 import NotFound from "./pages/NotFound";
+import PageTransition from "./components/common/PageTransition";
 
 export default function App() {
   return (
@@ -25,20 +26,22 @@ export default function App() {
         <div className="flex min-h-screen flex-col">
           <Navbar />
           <main className="flex-1">
-            <Routes>
-              <Route path="/"                              element={<Home />} />
-              <Route path="/bursaries"                     element={<Bursaries />} />
-              <Route path="/bursaries/:slug"               element={<BursaryDetail />} />
-              <Route path="/bursaries/:dimension/:slug"    element={<CategoryPage />} />
-              <Route path="/categories"                    element={<Categories />} />
-              <Route path="/submit"                        element={<Submit />} />
-              <Route path="/about"                         element={<About />} />
-              <Route path="/privacy-policy"                element={<PrivacyPolicy />} />
-              <Route path="/terms"                         element={<Terms />} />
-              <Route path="/contact"                       element={<Contact />} />
-              <Route path="/api-docs"                      element={<ApiDocs />} />
-              <Route path="*"                              element={<NotFound />} />
-            </Routes>
+            <PageTransition>
+              <Routes>
+                <Route path="/"                              element={<Home />} />
+                <Route path="/bursaries"                     element={<Bursaries />} />
+                <Route path="/bursaries/:slug"               element={<BursaryDetail />} />
+                <Route path="/bursaries/:dimension/:slug"    element={<CategoryPage />} />
+                <Route path="/categories"                    element={<Categories />} />
+                <Route path="/submit"                        element={<Submit />} />
+                <Route path="/about"                         element={<About />} />
+                <Route path="/privacy-policy"                element={<PrivacyPolicy />} />
+                <Route path="/terms"                         element={<Terms />} />
+                <Route path="/contact"                       element={<Contact />} />
+                <Route path="/api-docs"                      element={<ApiDocs />} />
+                <Route path="*"                              element={<NotFound />} />
+              </Routes>
+            </PageTransition>
           </main>
           <Footer />
           <CookieBanner />

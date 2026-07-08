@@ -9,6 +9,9 @@ dist/
 .env.local
 .env.production
 
+# Private notes — local only
+NOTES.md
+
 # Editor
 .vscode/
 .idea/

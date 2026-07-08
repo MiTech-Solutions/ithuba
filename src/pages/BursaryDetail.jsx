@@ -81,7 +81,7 @@ export default function BursaryDetail() {
 
   const colorClass = typeColors[bursary.funder_type?.toLowerCase()] || typeColors.ngo;
 
-  const canonicalUrl = `https://ithuba.app/bursaries/${slug}`;
+  const canonicalUrl = `https://ithubahub.co.za/bursaries/${slug}`;
 
   // ── JSON-LD structured data ───────────────────────────────────────────────
   const jsonLd = {
@@ -122,6 +122,7 @@ export default function BursaryDetail() {
           content={bursary.description || `${bursary.name} offered by ${bursary.funder}. Find bursary details and apply on Ithuba.`}
         />
         <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content="https://ithubahub.co.za/logo.svg" />
         <meta property="og:type" content="article" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
@@ -263,7 +264,7 @@ export default function BursaryDetail() {
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((b, i) => (
-                <BursaryCard key={b.id || i} bursary={b} />
+                <BursaryCard key={b.id || i} bursary={b} index={i} />
               ))}
             </div>
           </section>

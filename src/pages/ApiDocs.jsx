@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import { Copy, Check, ExternalLink } from "lucide-react";
 
-const BASE_URL = "https://ithuba.app/api/bursaries";
+const BASE_URL = "https://ithubahub.co.za/api/bursaries";
 
 const ENDPOINTS = [
   {
@@ -15,8 +15,8 @@ const ENDPOINTS = [
     "count": 20,
     "limit": 100,
     "offset": 0,
-    "source": "Ithuba Bursary Directory — https://ithuba.app",
-    "docs": "https://ithuba.app/api-docs"
+    "source": "Ithuba Bursary Directory — https://ithubahub.co.za",
+    "docs": "https://ithubahub.co.za/api-docs"
   },
   "data": [
     {
@@ -34,7 +34,7 @@ const ENDPOINTS = [
       "apply_url": "https://www.allangrayorbis.org/bursary",
       "featured": "true",
       "slug": "allan-gray-orbis-foundation-bursary",
-      "url": "https://ithuba.app/bursaries/allan-gray-orbis-foundation-bursary"
+      "url": "https://ithubahub.co.za/bursaries/allan-gray-orbis-foundation-bursary"
     }
   ]
 }`,
@@ -132,7 +132,7 @@ export default function ApiDocs() {
           name="description"
           content="Free public API for South African bursary data. Filter by funder type, field of study, province, and more. JSON responses, no auth required."
         />
-        <link rel="canonical" href="https://ithuba.app/api-docs" />
+        <link rel="canonical" href="https://ithubahub.co.za/api-docs" />
       </Helmet>
 
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
@@ -256,12 +256,12 @@ export default function ApiDocs() {
           <p className="text-sm leading-7 text-forest-600 dark:text-forest-400">
             This API is free to use. If you build something with it, we'd love
             to know — drop us a message at{" "}
-            <a href="mailto:info@ithuba.app" className="text-forest-700 dark:text-forest-200 underline underline-offset-2">
-              info@ithuba.app
+            <a href="mailto:info@ithubahub.co.za" className="text-forest-700 dark:text-forest-200 underline underline-offset-2">
+              info@ithubahub.co.za
             </a>
             . A link back to{" "}
-            <a href="https://ithuba.app" className="text-forest-700 dark:text-forest-200 underline underline-offset-2">
-              ithuba.app
+            <a href="https://ithubahub.co.za" className="text-forest-700 dark:text-forest-200 underline underline-offset-2">
+              ithubahub.co.za
             </a>{" "}
             is appreciated but not required.
           </p>

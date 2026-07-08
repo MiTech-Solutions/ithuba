@@ -10,7 +10,7 @@ export default function About() {
       <Helmet>
         <title>About Ithuba | South Africa's Free Bursary Directory</title>
         <meta name="description" content="Ithuba is a free South African bursary directory helping students find funding opportunities from government, corporate, and NGO funders." />
-        <link rel="canonical" href="https://ithuba.app/about" />
+        <link rel="canonical" href="https://ithubahub.co.za/about" />
       </Helmet>
 
       {/* Hero image banner */}

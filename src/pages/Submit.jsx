@@ -64,7 +64,7 @@ export default function Submit() {
       <Helmet>
         <title>Submit a Bursary | Ithuba</title>
         <meta name="description" content="Submit a South African bursary to the Ithuba directory. Help other students find funding opportunities." />
-        <link rel="canonical" href="https://ithuba.app/submit" />
+        <link rel="canonical" href="https://ithubahub.co.za/submit" />
       </Helmet>
 
       <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6 lg:px-8">
