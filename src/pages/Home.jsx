@@ -8,7 +8,7 @@ import BursaryCard from "../components/bursaries/BursaryCard";
 
 const HERO_IMG         = "https://images.unsplash.com/photo-1497271679421-ce9c3d6a31da?q=80&w=1471&auto=format&fit=crop";
 const HOW_IT_WORKS_IMG = "https://images.unsplash.com/photo-1683530014248-a085edbfc942?q=80&w=1470&auto=format&fit=crop";
-const CATEGORIES_IMG   = "https://images.unsplash.com/photo-1595239094544-cd47f94236d7?q=80&w=1470&auto=format&fit=crop";
+const CATEGORIES_IMG   = "https://cdn.pixabay.com/photo/2014/10/14/20/14/library-488690_960_720.jpg";
 
 // ── Animated count-up hook ────────────────────────────────────────────────────
 function useCountUp(target, duration = 1800) {

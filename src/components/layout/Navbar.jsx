@@ -47,17 +47,19 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop nav — #9 active underline indicator */}
+        {/* Desktop nav — #9 animated sliding underline */}
         <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
             <NavLink key={item.path} to={item.path} className={linkClass}>
               {({ isActive }) => (
-                <>
+                <span className="relative inline-block">
                   {item.label}
-                  {isActive && (
-                    <span className="absolute -bottom-[18px] left-0 right-0 h-0.5 rounded-full bg-gold-500 dark:bg-gold-400" />
-                  )}
-                </>
+                  <span
+                    className={`absolute -bottom-[18px] left-0 h-0.5 rounded-full bg-gold-500 dark:bg-gold-400 transition-all duration-300 ease-out ${
+                      isActive ? "w-full opacity-100" : "w-0 opacity-0"
+                    }`}
+                  />
+                </span>
               )}
             </NavLink>
           ))}

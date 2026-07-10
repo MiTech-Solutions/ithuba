@@ -94,10 +94,10 @@ export default function Contact() {
                 <p className="text-sm font-semibold text-forest-800 dark:text-forest-200">Email</p>
               </div>
               <a
-                href="mailto:info@ithubahub.co.za"
+                href="mailto:mitechsolutionsza@gmail.com"
                 className="text-sm text-forest-600 dark:text-forest-400 hover:text-forest-900 dark:hover:text-white transition underline underline-offset-2"
               >
-                info@ithubahub.co.za
+                mitechsolutionsza@gmail.com
               </a>
             </div>
 
@@ -108,7 +108,7 @@ export default function Contact() {
                 </div>
                 <p className="text-sm font-semibold text-forest-800 dark:text-forest-200">Based in</p>
               </div>
-              <p className="text-sm text-forest-600 dark:text-forest-400">South Africa</p>
+              <p className="text-sm text-forest-600 dark:text-forest-400">Johannesburg, South Africa</p>
             </div>
 
             {/* Common topics */}

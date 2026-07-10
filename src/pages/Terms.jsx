@@ -22,7 +22,7 @@ export default function Terms() {
               { title: "4. Submissions", body: "By submitting a bursary listing you confirm that the information is accurate and that you have the right to submit it. We reserve the right to edit or remove listings at our discretion." },
               { title: "5. Limitation of liability", body: "Ithuba is provided as-is. We are not liable for any loss, damage, or missed opportunity arising from reliance on information found on this site." },
               { title: "6. Changes", body: "These terms may be updated at any time. Continued use of the site constitutes acceptance of the updated terms." },
-              { title: "7. Contact", body: "For questions about these terms, contact: info@ithubahub.co.za" },
+              { title: "7. Contact", body: "For questions about these terms, contact: mitechsolutionsza@gmail.com" },
             ].map((s) => (
               <div key={s.title}>
                 <h2 className="font-semibold text-forest-900 dark:text-forest-100">{s.title}</h2>

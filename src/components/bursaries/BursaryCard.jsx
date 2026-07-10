@@ -64,8 +64,8 @@ export default function BursaryCard({ bursary, index = 0 }) {
               {typeLabel}
             </span>
             {bursary.featured === "true" && (
-              <span className="inline-flex items-center rounded-full bg-gold-100 dark:bg-gold-900/40 px-2.5 py-0.5 text-xs font-medium text-gold-700 dark:text-gold-300">
-                ★ Featured
+              <span className="inline-flex items-center rounded-full bg-gold-100 dark:bg-gold-900/40 px-2.5 py-0.5 text-xs font-medium border border-gold-200 dark:border-gold-800/50">
+                <span className="badge-shimmer">★ Featured</span>
               </span>
             )}
             {/* Closing soon / closed badge */}

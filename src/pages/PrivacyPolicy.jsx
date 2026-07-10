@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
               { title: "5. Bursary submissions", body: "Information submitted via the Submit a Bursary form is used solely for the purpose of reviewing and publishing bursary listings. Contact email addresses provided are not shared or used for marketing." },
               { title: "6. How to control cookies", body: "You can limit or disable cookies through your browser settings. You may also use the Google Analytics opt-out add-on at tools.google.com/dlpage/gaoptout, or manage ad personalisation at google.com/settings/ads." },
               { title: "7. Changes to this policy", body: "This policy may be updated from time to time. Changes will be reflected on this page with an updated date." },
-              { title: "8. Contact", body: "For privacy-related questions, contact: info@ithubahub.co.za" },
+              { title: "8. Contact", body: "For privacy-related questions, contact: mitechsolutionsza@gmail.com" },
             ].map((s) => (
               <div key={s.title}>
                 <h2 className="font-semibold text-forest-900 dark:text-forest-100">{s.title}</h2>

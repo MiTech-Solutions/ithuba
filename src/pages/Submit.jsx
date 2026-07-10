@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Send, CheckCircle } from "lucide-react";
 
-// Replace YOUR_FORMSPREE_ID with your actual Formspree form ID after signing up at formspree.io
+
 const FORMSPREE_URL = "https://formspree.io/f/mojowpbw";
 
 const FIELDS = ["Engineering", "Medicine", "Law", "Business", "IT", "Teaching", "Science", "Arts", "Agriculture", "Social Work", "Finance", "All fields", "Other"];

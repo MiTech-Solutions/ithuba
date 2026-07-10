@@ -44,4 +44,41 @@
     from { transform: translateX(-100%); }
     to   { transform: translateX(0); }
   }
+
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
+  }
+
+  .badge-shimmer {
+    background: linear-gradient(
+      90deg,
+      #ca8f12 0%,
+      #f3de8a 40%,
+      #e5b020 50%,
+      #f3de8a 60%,
+      #ca8f12 100%
+    );
+    background-size: 200% auto;
+    animation: shimmer 2.8s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .dark .badge-shimmer {
+    background: linear-gradient(
+      90deg,
+      #a86d0d 0%,
+      #edc847 40%,
+      #e5b020 50%,
+      #edc847 60%,
+      #a86d0d 100%
+    );
+    background-size: 200% auto;
+    animation: shimmer 2.8s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

@@ -256,8 +256,8 @@ export default function ApiDocs() {
           <p className="text-sm leading-7 text-forest-600 dark:text-forest-400">
             This API is free to use. If you build something with it, we'd love
             to know — drop us a message at{" "}
-            <a href="mailto:info@ithubahub.co.za" className="text-forest-700 dark:text-forest-200 underline underline-offset-2">
-              info@ithubahub.co.za
+            <a href="mailto:mitechsolutionsza@gmail.com" className="text-forest-700 dark:text-forest-200 underline underline-offset-2">
+              mitechsolutionsza@gmail.com
             </a>
             . A link back to{" "}
             <a href="https://ithubahub.co.za" className="text-forest-700 dark:text-forest-200 underline underline-offset-2">
