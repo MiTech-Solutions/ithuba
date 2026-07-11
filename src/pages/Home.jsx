@@ -5,6 +5,7 @@ import { ArrowRight, Search, BookOpen, Users, Star, Briefcase, GraduationCap, Ma
 import { useBursaries } from "../hooks/useBursaries";
 import { matchesCategory } from "../data/categories";
 import BursaryCard from "../components/bursaries/BursaryCard";
+import TrustBar from "../components/home/TrustBar";
 
 const HERO_IMG         = "https://images.unsplash.com/photo-1497271679421-ce9c3d6a31da?q=80&w=1471&auto=format&fit=crop";
 const HOW_IT_WORKS_IMG = "https://images.unsplash.com/photo-1683530014248-a085edbfc942?q=80&w=1470&auto=format&fit=crop";
@@ -40,9 +41,17 @@ function useCountUp(target, duration = 1800) {
 
 // ── Stat item — slides in from right, counts up ───────────────────────────────
 function StatItem({ label, target, suffix = "", delay = 0 }) {
-  const ref             = useRef(null);
+  const ref                   = useRef(null);
   const [visible, setVisible] = useState(false);
-  const count           = useCountUp(visible ? (typeof target === "number" ? target : null) : null);
+  const [pulsed, setPulsed]   = useState(false);
+  const count                 = useCountUp(visible ? (typeof target === "number" ? target : null) : null);
+
+  // Fire pulse once the count reaches the target
+  useEffect(() => {
+    if (typeof target === "number" && count === target && count > 0 && !pulsed) {
+      setPulsed(true);
+    }
+  }, [count, target, pulsed]);
 
   useEffect(() => {
     const el = ref.current;
@@ -60,12 +69,16 @@ function StatItem({ label, target, suffix = "", delay = 0 }) {
       ref={ref}
       className="text-center transition-all duration-700"
       style={{
-        opacity:    visible ? 1 : 0,
-        transform:  visible ? "translateX(0)" : "translateX(40px)",
+        opacity:         visible ? 1 : 0,
+        transform:       visible ? "translateX(0)" : "translateX(40px)",
         transitionDelay: `${delay}ms`,
       }}
     >
-      <p className="text-3xl font-bold text-forest-800 dark:text-forest-100 tabular-nums">
+      <p
+        className={`text-3xl font-bold text-forest-800 dark:text-forest-100 tabular-nums ${
+          pulsed ? "animate-[pulse-once_0.45s_ease_forwards]" : ""
+        }`}
+      >
         {typeof target === "number" ? count : target}{suffix}
       </p>
       <p className="text-xs text-forest-500 dark:text-forest-400 mt-1 tracking-wide">{label}</p>
@@ -136,38 +149,25 @@ export default function Home() {
 
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 w-full">
           <div className="max-w-2xl">
-            <div
-              className="inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-400/10 px-4 py-1.5 text-sm text-gold-300 animate-[fadeSlideUp_0.5s_ease_0.1s_both]"
-            >
-              <Star size={13} fill="currentColor" />
-              Free for all South African students
+            <div className="inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-400/10 px-4 py-1.5 text-sm text-gold-300 animate-[fadeSlideUp_0.5s_ease_0.1s_both]">
+                <Star size={13} fill="currentColor" />
+                Free for all South African students
             </div>
-            <h1
-              className="mt-6 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl animate-[fadeSlideUp_0.5s_ease_0.25s_both]"
-            >
-              Your opportunity
-              <span className="block text-gold-400"> starts here.</span>
+            <h1 className="mt-5 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl animate-[fadeSlideUp_0.5s_ease_0.25s_both]">
+              Search hundreds of
+            <span className="block text-gold-400">South African bursaries,</span>
+            <span className="block text-white/90 text-3xl sm:text-4xl lg:text-5xl font-normal mt-1">
+              internships &amp; learnerships — for free.
+            </span>
             </h1>
-            <p
-              className="mt-5 max-w-xl text-lg leading-8 text-forest-200 animate-[fadeSlideUp_0.5s_ease_0.4s_both]"
-            >
-              Ithuba is South Africa's free bursary directory. Search funding
-              opportunities from government, corporate, and NGO funders — all
-              in one place.
+            <p className="mt-5 max-w-xl text-base leading-8 text-forest-200 animate-[fadeSlideUp_0.5s_ease_0.4s_both]">
+              Ithuba is South Africa's free bursary directory. Government, corporate, and NGO funding — all in one place, verified and updated regularly. No fees. No sign-up. Just opportunity.
             </p>
-            <div
-              className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center animate-[fadeSlideUp_0.5s_ease_0.55s_both]"
-            >
-              <Link
-                to="/bursaries"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gold-500 px-6 py-3.5 text-sm font-semibold text-forest-950 transition hover:bg-gold-400 hover:shadow-lg hover:shadow-gold-500/25"
-              >
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center animate-[fadeSlideUp_0.5s_ease_0.55s_both]">
+              <Link to="/bursaries" className="inline-flex items-center justify-center gap-2 rounded-xl bg-gold-500 px-6 py-3.5 text-sm font-semibold text-forest-950 transition hover:bg-gold-400 hover:shadow-lg hover:shadow-gold-500/25">
                 <Search size={16} /> Browse all bursaries
               </Link>
-              <Link
-                to="/submit"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-forest-400/50 px-6 py-3.5 text-sm font-medium text-forest-100 transition hover:bg-forest-700/50"
-              >
+              <Link to="/submit" className="inline-flex items-center justify-center gap-2 rounded-xl border border-forest-400/50 px-6 py-3.5 text-sm font-medium text-forest-100 transition hover:bg-forest-700/50">
                 Submit a bursary <ArrowRight size={15} />
               </Link>
             </div>
@@ -175,6 +175,7 @@ export default function Home() {
         </div>
       </section>
 
+      <TrustBar />
       {/* ── Stats bar ────────────────────────────────────────────────── */}
       <StatsBar total={loading ? null : bursaries.length} />
 

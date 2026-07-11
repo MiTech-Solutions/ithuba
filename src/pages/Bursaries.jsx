@@ -129,7 +129,7 @@ export default function Bursaries() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by name, funder, or field..."
-            className="w-full rounded-2xl border border-forest-200 dark:border-forest-700 bg-white dark:bg-forest-900 py-3.5 pl-10 pr-4 text-sm text-forest-900 dark:text-forest-100 outline-none placeholder:text-forest-400 focus:border-forest-500 dark:focus:border-forest-400 transition"
+            className="w-full rounded-2xl border border-forest-200 dark:border-forest-700 bg-white dark:bg-forest-900 py-3.5 pl-10 pr-4 text-sm text-forest-900 dark:text-forest-100 outline-none placeholder:text-forest-400 focus:border-forest-500 dark:focus:border-forest-400 focus:shadow-lg focus:shadow-forest-500/10 dark:focus:shadow-forest-400/10 focus:scale-[1.01] transition-all duration-200"
           />
           {search && (
             <button onClick={() => setSearch("")} className="absolute right-4 top-1/2 -translate-y-1/2 text-forest-400 hover:text-forest-700">
