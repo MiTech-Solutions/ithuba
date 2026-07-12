@@ -4,6 +4,7 @@ import { Search, SlidersHorizontal, X, ArrowRight, ArrowUpDown } from "lucide-re
 import { Link } from "react-router-dom";
 import { useBursaries } from "../hooks/useBursaries";
 import BursaryCard from "../components/bursaries/BursaryCard";
+import EmptyState from "../components/common/EmptyState";
 import { slugify } from "../utils/slug";
 import { sortByDeadline } from "../utils/deadline";
 
@@ -303,29 +304,12 @@ export default function Bursaries() {
 
             {/* Empty sheet — no bursaries at all */}
             {!loading && !error && bursaries.length === 0 && (
-              <div className="rounded-2xl border border-forest-200 dark:border-forest-700 bg-white dark:bg-forest-900 p-12 text-center">
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-forest-100 dark:bg-forest-800">
-                  <Search size={24} className="text-forest-400 dark:text-forest-500" />
-                </div>
-                <p className="font-semibold text-forest-800 dark:text-forest-200 text-lg">No bursaries yet</p>
-                <p className="mt-2 text-sm text-forest-500 dark:text-forest-400 max-w-sm mx-auto leading-6">
-                  We're still building the directory. Check back soon — or help us grow it by submitting a bursary you know of.
-                </p>
-                <Link to="/submit" className="mt-5 inline-flex items-center gap-2 rounded-xl bg-forest-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-forest-700 transition">
-                  Submit a bursary <ArrowRight size={14} />
-                </Link>
-              </div>
+              <EmptyState variant="empty" />
             )}
 
             {/* No results after filtering */}
             {!loading && !error && bursaries.length > 0 && filtered.length === 0 && (
-              <div className="rounded-2xl border border-forest-200 dark:border-forest-700 bg-white dark:bg-forest-900 p-10 text-center">
-                <p className="font-semibold text-forest-800 dark:text-forest-200">No bursaries match your filters</p>
-                <p className="mt-2 text-sm text-forest-500 dark:text-forest-400">Try adjusting your search or clearing the filters.</p>
-                <button onClick={clearFilters} className="mt-4 inline-flex items-center gap-1.5 rounded-xl bg-forest-600 px-4 py-2 text-sm font-medium text-white hover:bg-forest-700 transition">
-                  <X size={14} /> Clear filters
-                </button>
-              </div>
+              <EmptyState variant="no-results" onClear={clearFilters} />
             )}
 
             {/* Results */}

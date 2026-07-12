@@ -52,9 +52,10 @@ export default function CategoryPage() {
   return (
     <>
       <Helmet>
-        <title>{category.label} South Africa 2025/26 | Ithuba</title>
+        <title>{!loading && filtered.length > 0 ? `${filtered.length} ` : ""}{category.label} South Africa 2025/26 | Ithuba</title>
         <meta name="description" content={category.metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:site_name" content="Ithuba" />
         <meta property="og:title" content={`${category.label} South Africa | Ithuba`} />
         <meta property="og:description" content={category.metaDescription} />
         <meta property="og:url" content={canonicalUrl} />

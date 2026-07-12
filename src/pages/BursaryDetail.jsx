@@ -219,6 +219,82 @@ export default function BursaryDetail() {
             </div>
           )}
 
+          {/* Who should apply */}
+          <div className="mt-6 rounded-2xl border border-forest-100 dark:border-forest-800 bg-forest-50 dark:bg-forest-800/40 p-5">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-forest-500 dark:text-forest-400 mb-3">
+              Who should apply?
+            </h2>
+            <p className="text-sm leading-7 text-forest-700 dark:text-forest-300">
+              This bursary is suited to South African students who{" "}
+              {bursary.field_of_study && bursary.field_of_study !== "All fields"
+                ? `are studying or planning to study ${bursary.field_of_study}`
+                : "are enrolled or accepted at a South African university or TVET college"
+              }
+              {bursary.study_level && ` at ${bursary.study_level.toLowerCase()} level`}
+              {bursary.province && bursary.province !== "National"
+                ? ` and are based in ${bursary.province}`
+                : " from any province"
+              }
+              . Students who are academically strong, have a clear career direction, and are committed to their field will be best positioned to succeed in the selection process.
+              {bursary.funder_type === "corporate"
+                ? ` As a corporate bursary, ${bursary.funder} typically looks for candidates who demonstrate interest in the industry and are open to working for the organisation after graduation.`
+                : bursary.funder_type === "government"
+                ? " Government bursaries typically prioritise students from lower-income households who would not otherwise be able to afford tertiary education."
+                : ""
+              }
+            </p>
+          </div>
+
+          {/* Required documents */}
+          <div className="mt-6">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-forest-500 dark:text-forest-400 mb-3">
+              Documents typically required
+            </h2>
+            <div className="grid gap-2 sm:grid-cols-2">
+              {[
+                "Certified copy of South African ID",
+                "Certified copy of matric certificate or latest results",
+                "Proof of university acceptance or registration",
+                "Proof of household income",
+                "Motivation letter",
+                "Curriculum Vitae (CV)",
+                "Bank statement (last 3 months)",
+                "Two references (academic or character)",
+              ].map((doc) => (
+                <div key={doc} className="flex items-center gap-2 text-sm text-forest-600 dark:text-forest-400">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-forest-400 dark:bg-forest-500" />
+                  {doc}
+                </div>
+              ))}
+            </div>
+            <p className="mt-3 text-xs text-forest-400 dark:text-forest-500">
+              Always check the official application page for the exact document list — requirements vary by funder.
+            </p>
+          </div>
+
+          {/* Application tips */}
+          <div className="mt-6 rounded-2xl border border-gold-200 dark:border-gold-900/30 bg-gold-50 dark:bg-gold-900/10 p-5">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-gold-600 dark:text-gold-400 mb-3">
+              Application tips
+            </h2>
+            <ul className="space-y-2">
+              {[
+                "Apply before the deadline — not on it. Systems crash on closing day.",
+                "Tailor your motivation letter to this specific funder and field.",
+                "Get your documents certified early — police stations offer free certification.",
+                "Apply to multiple bursaries simultaneously to maximise your chances.",
+                bursary.funder_type === "corporate"
+                  ? `Research ${bursary.funder} before applying — understanding their business strengthens your application.`
+                  : "Be specific about your financial situation if the bursary is need-based.",
+              ].map((tip) => (
+                <li key={tip} className="flex items-start gap-2 text-sm leading-6 text-forest-700 dark:text-forest-300">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-500 dark:bg-gold-400" />
+                  {tip}
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Apply CTA */}
           {bursary.apply_url && (
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -246,6 +322,11 @@ export default function BursaryDetail() {
             <span className="font-medium">{bursary.funder}</span> before
             applying. Ithuba is not affiliated with this funder.
           </p>
+          {bursary.last_verified && (
+            <p className="mt-2 text-xs text-forest-400 dark:text-forest-500">
+              ✓ Last verified: {bursary.last_verified}
+            </p>
+          )}
         </article>
 
         {/* Related bursaries */}

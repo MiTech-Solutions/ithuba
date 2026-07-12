@@ -17,6 +17,11 @@ import Contact from "./pages/Contact";
 import ApiDocs from "./pages/ApiDocs";
 import NotFound from "./pages/NotFound";
 import PageTransition from "./components/common/PageTransition";
+import Guides from "./pages/guides/Guides";
+import HowToApply from "./pages/guides/HowToApply";
+import BursaryVsScholarship from "./pages/guides/BursaryVsScholarship";
+import Documents from "./pages/guides/Documents";
+import InterviewQuestions from "./pages/guides/InterviewQuestions";
 
 export default function App() {
   return (
@@ -28,18 +33,23 @@ export default function App() {
           <main className="flex-1">
             <PageTransition>
               <Routes>
-                <Route path="/"                              element={<Home />} />
-                <Route path="/bursaries"                     element={<Bursaries />} />
-                <Route path="/bursaries/:slug"               element={<BursaryDetail />} />
-                <Route path="/bursaries/:dimension/:slug"    element={<CategoryPage />} />
-                <Route path="/categories"                    element={<Categories />} />
-                <Route path="/submit"                        element={<Submit />} />
-                <Route path="/about"                         element={<About />} />
-                <Route path="/privacy-policy"                element={<PrivacyPolicy />} />
-                <Route path="/terms"                         element={<Terms />} />
-                <Route path="/contact"                       element={<Contact />} />
-                <Route path="/api-docs"                      element={<ApiDocs />} />
-                <Route path="*"                              element={<NotFound />} />
+                <Route path="/"                                                          element={<Home />} />
+                <Route path="/bursaries"                                                 element={<Bursaries />} />
+                <Route path="/bursaries/:slug"                                           element={<BursaryDetail />} />
+                <Route path="/bursaries/:dimension/:slug"                                element={<CategoryPage />} />
+                <Route path="/categories"                                                element={<Categories />} />
+                <Route path="/submit"                                                    element={<Submit />} />
+                <Route path="/about"                                                     element={<About />} />
+                <Route path="/privacy-policy"                                            element={<PrivacyPolicy />} />
+                <Route path="/terms"                                                     element={<Terms />} />
+                <Route path="/contact"                                                   element={<Contact />} />
+                <Route path="/api-docs"                                                  element={<ApiDocs />} />
+                <Route path="/guides"                                                    element={<Guides />} />
+                <Route path="/guides/how-to-apply-for-a-bursary"                        element={<HowToApply />} />
+                <Route path="/guides/difference-between-bursaries-and-scholarships"     element={<BursaryVsScholarship />} />
+                <Route path="/guides/documents-you-need-before-applying"                element={<Documents />} />
+                <Route path="/guides/common-bursary-interview-questions"                element={<InterviewQuestions />} />
+                <Route path="*"                                                          element={<NotFound />} />
               </Routes>
             </PageTransition>
           </main>
@@ -50,3 +60,4 @@ export default function App() {
     </HelmetProvider>
   );
 }
+

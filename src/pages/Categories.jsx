@@ -43,6 +43,7 @@ export default function Categories() {
           content="Browse South African bursaries by category — government, corporate, NGO, engineering, finance, IT, medicine, Gauteng, Western Cape, and more."
         />
         <link rel="canonical" href="https://ithubahub.co.za/categories" />
+        <meta property="og:site_name" content="Ithuba" />
         <meta property="og:title" content="Bursary Categories South Africa | Ithuba" />
         <meta property="og:description" content="Browse South African bursaries by funder type, field of study, and province." />
         <meta property="og:url" content="https://ithubahub.co.za/categories" />

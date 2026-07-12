@@ -107,18 +107,29 @@ const PARAMS = [
 ];
 
 function CopyButton({ text }) {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied]   = useState(false);
+  const [animate, setAnimate] = useState(false);
+
   async function copy() {
     await navigator.clipboard.writeText(text);
     setCopied(true);
+    setAnimate(true);
+    setTimeout(() => setAnimate(false), 350);
     setTimeout(() => setCopied(false), 2000);
   }
+
   return (
     <button
       onClick={copy}
-      className="inline-flex items-center gap-1.5 rounded-lg border border-forest-200 dark:border-forest-700 bg-white dark:bg-forest-900 px-3 py-1.5 text-xs font-medium text-forest-600 dark:text-forest-300 transition hover:border-forest-400 dark:hover:border-forest-500"
+      className={`inline-flex items-center gap-1.5 rounded-lg border border-forest-200 dark:border-forest-700 bg-white dark:bg-forest-900 px-3 py-1.5 text-xs font-medium text-forest-600 dark:text-forest-300 transition-all hover:border-forest-400 dark:hover:border-forest-500 ${
+        animate ? "scale-110 border-forest-400 dark:border-forest-400" : "scale-100"
+      } ${copied ? "text-forest-500 dark:text-forest-300" : ""}`}
+      style={{ transition: "transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.15s ease" }}
     >
-      {copied ? <><Check size={12} className="text-forest-500" /> Copied</> : <><Copy size={12} /> Copy</>}
+      {copied
+        ? <><Check size={12} className="text-forest-500 dark:text-forest-400" /> Copied</>
+        : <><Copy size={12} /> Copy</>
+      }
     </button>
   );
 }

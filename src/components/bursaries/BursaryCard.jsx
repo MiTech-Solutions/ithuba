@@ -141,6 +141,13 @@ export default function BursaryCard({ bursary, index = 0 }) {
           </p>
         )}
 
+        {/* Last verified */}
+        {bursary.last_verified && (
+          <p className="mt-2 text-xs text-forest-400 dark:text-forest-500">
+            ✓ Verified {bursary.last_verified}
+          </p>
+        )}
+
         <div className="flex-1" />
 
         <Link

@@ -127,6 +127,7 @@ export default function Home() {
         <title>Ithuba — South Africa's Free Bursary Directory</title>
         <meta name="description" content="Find bursaries and funding opportunities for South African students. Search government, corporate, and NGO bursaries by field of study, province, and study level. Free and updated regularly." />
         <link rel="canonical" href="https://ithubahub.co.za/" />
+        <meta property="og:site_name" content="Ithuba" />
         <meta property="og:title" content="Ithuba — South Africa's Free Bursary Directory" />
         <meta property="og:description" content="Find bursaries and funding opportunities for South African students. Free, searchable, and updated regularly." />
         <meta property="og:url" content="https://ithubahub.co.za/" />
@@ -336,6 +337,12 @@ export default function Home() {
           <Link to="/submit" className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gold-500 px-6 py-3 text-sm font-semibold text-forest-950 transition hover:bg-gold-400">
             Submit a bursary <ArrowRight size={15} />
           </Link>
+          <p className="mt-6 text-sm text-forest-500 dark:text-forest-400">
+            New to bursary applications?{" "}
+            <Link to="/guides" className="font-medium text-forest-700 dark:text-forest-300 underline underline-offset-2 hover:text-forest-900 dark:hover:text-white transition">
+              Read our student guides
+            </Link>
+          </p>
         </div>
       </section>
     </>
