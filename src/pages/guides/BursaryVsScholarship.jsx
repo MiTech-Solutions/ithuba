@@ -56,9 +56,10 @@ export default function GuideBursaryVsScholarship() {
         />
         <link rel="canonical" href="https://ithubahub.co.za/guides/difference-between-bursaries-and-scholarships" />
         <meta property="og:title" content="Bursary vs Scholarship — What's the Difference? | Ithuba" />
-        <meta property="og:description" content="Understand the key differences between bursaries and scholarships in South Africa — funding, obligations, eligibility, and more." />
+        <meta property="og:description" content="Understand the key differences between bursaries and scholarships in South Africa — work-back obligations, funding coverage, eligibility, and which suits you." />
         <meta property="og:url" content="https://ithubahub.co.za/guides/difference-between-bursaries-and-scholarships" />
-        <meta property="og:image" content="https://ithubahub.co.za/logo.svg" />
+        <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+        <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ithubahub.co.za"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://ithubahub.co.za/guides"},{"@type":"ListItem","position":3,"name":"Bursary vs Scholarship","item":"https://ithubahub.co.za/guides/difference-between-bursaries-and-scholarships"}]})}</script>
       </Helmet>
 
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">

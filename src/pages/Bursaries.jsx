@@ -8,7 +8,7 @@ import EmptyState from "../components/common/EmptyState";
 import { slugify } from "../utils/slug";
 import { sortByDeadline } from "../utils/deadline";
 
-const OG_IMAGE  = "https://ithubahub.co.za/logo.svg";
+const OG_IMAGE  = "https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png";
 const FIELDS    = ["All fields", "Engineering", "Medicine", "Law", "Business", "IT", "Teaching", "Science", "Arts", "Agriculture", "Social Work", "Finance", "Other"];
 const TYPES     = ["All types", "Government", "Corporate", "NGO"];
 const LEVELS    = ["All levels", "Undergraduate", "Postgraduate", "TVET", "Masters", "PhD"];

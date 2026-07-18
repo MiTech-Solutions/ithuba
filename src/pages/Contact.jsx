@@ -57,12 +57,16 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Ithuba</title>
+        <title>Contact Us | Ithuba — South Africa's Bursary Directory</title>
         <meta
           name="description"
-          content="Get in touch with the Ithuba team. Questions about bursary listings, submissions, or the directory? We'd love to hear from you."
+          content="Get in touch with the Ithuba team. Report outdated bursary information, ask questions about submissions, or enquire about partnerships. Based in Johannesburg, South Africa."
         />
         <link rel="canonical" href="https://ithubahub.co.za/contact" />
+        <meta property="og:title" content="Contact Us | Ithuba" />
+        <meta property="og:description" content="Get in touch with the Ithuba team. Questions about bursary listings or submissions?" />
+        <meta property="og:url" content="https://ithubahub.co.za/contact" />
+        <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
       </Helmet>
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">

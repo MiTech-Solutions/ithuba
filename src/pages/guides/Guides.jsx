@@ -46,7 +46,9 @@ export default function Guides() {
         <meta property="og:title" content="Student Guides | Ithuba" />
         <meta property="og:description" content="Free guides to help South African students find and apply for bursaries successfully." />
         <meta property="og:url" content="https://ithubahub.co.za/guides" />
-        <meta property="og:image" content="https://ithubahub.co.za/logo.svg" />
+        <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+        <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+        <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
       </Helmet>
 
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">

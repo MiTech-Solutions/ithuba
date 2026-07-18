@@ -62,9 +62,13 @@ export default function Submit() {
   return (
     <>
       <Helmet>
-        <title>Submit a Bursary | Ithuba</title>
-        <meta name="description" content="Submit a South African bursary to the Ithuba directory. Help other students find funding opportunities." />
+        <title>Submit a Bursary | Help South African Students Find Funding | Ithuba</title>
+        <meta name="description" content="Know of a bursary that should be listed on Ithuba? Submit it for free. Help South African students discover funding opportunities from government, corporate, and NGO funders." />
         <link rel="canonical" href="https://ithubahub.co.za/submit" />
+        <meta property="og:title" content="Submit a Bursary | Ithuba" />
+        <meta property="og:description" content="Submit a South African bursary to the Ithuba directory. Free and takes less than two minutes." />
+        <meta property="og:url" content="https://ithubahub.co.za/submit" />
+        <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
       </Helmet>
 
       <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6 lg:px-8">

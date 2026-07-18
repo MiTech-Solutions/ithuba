@@ -132,10 +132,11 @@ export default function GuideInterviewQuestions() {
           content="Prepare for your bursary interview with this guide to common questions — about yourself, the funder, your academics, and situational questions — with tips on how to answer each one."
         />
         <link rel="canonical" href="https://ithubahub.co.za/guides/common-bursary-interview-questions" />
-        <meta property="og:title" content="Common Bursary Interview Questions | Ithuba Guide" />
+        <meta property="og:title" content="Common Bursary Interview Questions & Answers | Ithuba" />
         <meta property="og:description" content="17 common bursary interview questions with practical advice on how to answer each one. Prepare confidently for your next bursary interview." />
         <meta property="og:url" content="https://ithubahub.co.za/guides/common-bursary-interview-questions" />
-        <meta property="og:image" content="https://ithubahub.co.za/logo.svg" />
+        <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+        <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ithubahub.co.za"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://ithubahub.co.za/guides"},{"@type":"ListItem","position":3,"name":"Interview questions","item":"https://ithubahub.co.za/guides/common-bursary-interview-questions"}]})}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",

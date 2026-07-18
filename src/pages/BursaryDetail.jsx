@@ -122,7 +122,7 @@ export default function BursaryDetail() {
           content={bursary.description || `${bursary.name} offered by ${bursary.funder}. Find bursary details and apply on Ithuba.`}
         />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content="https://ithubahub.co.za/logo.svg" />
+        <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
         <meta property="og:type" content="article" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>

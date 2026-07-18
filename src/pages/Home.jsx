@@ -132,6 +132,33 @@ export default function Home() {
         <meta property="og:description" content="Find bursaries and funding opportunities for South African students. Free, searchable, and updated regularly." />
         <meta property="og:url" content="https://ithubahub.co.za/" />
         <meta property="og:image" content={HERO_IMG} />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "url": "https://ithubahub.co.za",
+              "name": "Ithuba",
+              "description": "South Africa's free bursary directory",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://ithubahub.co.za/bursaries?search={search_term_string}",
+                },
+                "query-input": "required name=search_term_string",
+              },
+            },
+            {
+              "@type": "Organization",
+              "name": "Ithuba",
+              "url": "https://ithubahub.co.za",
+              "logo": "https://ithubahub.co.za/logo.svg",
+              "email": "mitechsolutionsza@gmail.com",
+              "sameAs": ["https://www.mitechsolutions.org"],
+            },
+          ],
+        })}</script>
       </Helmet>
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}

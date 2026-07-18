@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
+# No need to crawl legal/utility pages
+Disallow: /privacy-policy
+Disallow: /terms
+
+# No need to crawl 404
+Disallow: /404
+
 Sitemap: https://ithubahub.co.za/sitemap.xml

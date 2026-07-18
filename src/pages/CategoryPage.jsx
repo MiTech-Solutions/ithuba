@@ -59,7 +59,7 @@ export default function CategoryPage() {
         <meta property="og:title" content={`${category.label} South Africa | Ithuba`} />
         <meta property="og:description" content={category.metaDescription} />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content="https://ithubahub.co.za/logo.svg" />
+        <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
