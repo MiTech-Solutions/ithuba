@@ -11,13 +11,14 @@ export default function Footer() {
             <Link to="/" aria-label="Ithuba home">
               <img
                 src="/logo.svg"
-                alt="Ithuba Bursary Directory"
+                alt="Ithuba Student Opportunities"
                 className="h-10 w-auto dark:brightness-[1.15]"
               />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-6 text-forest-600 dark:text-forest-400">
-              South Africa's free bursary directory. Helping students find
-              funding opportunities to open doors to education.
+              South Africa's free student opportunities directory. Helping
+              students find bursaries and scholarships to open doors to
+              education and career growth.
             </p>
             <p className="mt-3 text-xs text-forest-500 dark:text-forest-500">
               Ithuba means <em>opportunity</em> in Zulu and Xhosa.
@@ -31,6 +32,7 @@ export default function Footer() {
             </p>
             <ul className="mt-4 space-y-3 text-sm text-forest-600 dark:text-forest-400">
               <li><Link to="/bursaries" className="hover:text-forest-900 dark:hover:text-white transition">All Bursaries</Link></li>
+              <li><Link to="/scholarships" className="hover:text-forest-900 dark:hover:text-white transition">All Scholarships</Link></li>
               <li><Link to="/bursaries?type=government" className="hover:text-forest-900 dark:hover:text-white transition">Government Bursaries</Link></li>
               <li><Link to="/bursaries?type=corporate" className="hover:text-forest-900 dark:hover:text-white transition">Corporate Bursaries</Link></li>
               <li><Link to="/bursaries?type=ngo" className="hover:text-forest-900 dark:hover:text-white transition">NGO Bursaries</Link></li>
@@ -45,6 +47,7 @@ export default function Footer() {
               <li><Link to="/about" className="hover:text-forest-900 dark:hover:text-white transition">About</Link></li>
               <li><Link to="/contact" className="hover:text-forest-900 dark:hover:text-white transition">Contact</Link></li>
               <li><Link to="/guides" className="hover:text-forest-900 dark:hover:text-white transition">Guides</Link></li>
+              <li><Link to="/articles" className="hover:text-forest-900 dark:hover:text-white transition">Articles</Link></li>
               <li><Link to="/api-docs" className="hover:text-forest-900 dark:hover:text-white transition">API</Link></li>
               <li><Link to="/submit" className="hover:text-forest-900 dark:hover:text-white transition">Submit a Bursary</Link></li>
               <li><Link to="/privacy-policy" className="hover:text-forest-900 dark:hover:text-white transition">Privacy Policy</Link></li>

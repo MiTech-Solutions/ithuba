@@ -24,3 +24,8 @@
   from = "/api/bursaries/*"
   to = "/.netlify/functions/bursaries/:splat"
   status = 200
+
+[[redirects]]
+  from = "/api/newsletter"
+  to = "/.netlify/functions/newsletter"
+  status = 200

@@ -17,11 +17,20 @@ import Contact from "./pages/Contact";
 import ApiDocs from "./pages/ApiDocs";
 import NotFound from "./pages/NotFound";
 import PageTransition from "./components/common/PageTransition";
+import NewsletterSignup from "./components/common/NewsletterSignup";
 import Guides from "./pages/guides/Guides";
 import HowToApply from "./pages/guides/HowToApply";
 import BursaryVsScholarship from "./pages/guides/BursaryVsScholarship";
 import Documents from "./pages/guides/Documents";
 import InterviewQuestions from "./pages/guides/InterviewQuestions";
+import Scholarships from "./pages/Scholarships";
+import ScholarshipDetail from "./pages/ScholarshipDetail";
+import Articles from "./pages/articles/Articles";
+import ArticleNSFAS from "./pages/articles/NSFAS";
+import ArticleTop10Bursaries from "./pages/articles/Top10Bursaries";
+import ArticleEngineeringBursaries from "./pages/articles/EngineeringBursaries";
+import ArticleFirstYearBursaries from "./pages/articles/FirstYearBursaries";
+import ArticleMotivationLetter from "./pages/articles/MotivationLetter";
 
 export default function App() {
   return (
@@ -44,6 +53,14 @@ export default function App() {
                 <Route path="/terms"                                                     element={<Terms />} />
                 <Route path="/contact"                                                   element={<Contact />} />
                 <Route path="/api-docs"                                                  element={<ApiDocs />} />
+                <Route path="/scholarships"                                              element={<Scholarships />} />
+                <Route path="/scholarships/:slug"                                        element={<ScholarshipDetail />} />
+                <Route path="/articles"                                                  element={<Articles />} />
+                <Route path="/articles/nsfas-2026-guide"                                element={<ArticleNSFAS />} />
+                <Route path="/articles/top-10-bursaries-open-now"                      element={<ArticleTop10Bursaries />} />
+                <Route path="/articles/best-bursaries-for-engineering-students"        element={<ArticleEngineeringBursaries />} />
+                <Route path="/articles/bursaries-for-first-year-students"              element={<ArticleFirstYearBursaries />} />
+                <Route path="/articles/how-to-write-a-bursary-motivation-letter"       element={<ArticleMotivationLetter />} />
                 <Route path="/guides"                                                    element={<Guides />} />
                 <Route path="/guides/how-to-apply-for-a-bursary"                        element={<HowToApply />} />
                 <Route path="/guides/difference-between-bursaries-and-scholarships"     element={<BursaryVsScholarship />} />
@@ -53,6 +70,7 @@ export default function App() {
               </Routes>
             </PageTransition>
           </main>
+          <NewsletterSignup variant="bar" />
           <Footer />
           <CookieBanner />
         </div>
