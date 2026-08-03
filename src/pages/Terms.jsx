@@ -6,6 +6,7 @@ export default function Terms() {
       <Helmet>
         <title>Terms of Use | Ithuba</title>
         <meta name="robots" content="noindex, follow" />
+        <link rel="canonical" href="https://ithubahub.co.za/terms" />
       </Helmet>
 
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">

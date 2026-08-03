@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet-async";
 import { Mail, Send, CheckCircle, MapPin } from "lucide-react";
 
 const FORMSPREE_URL = "https://formspree.io/f/mojowpbw";
-const CONTACT_IMG = "https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=1470&auto=format&fit=crop";
 
 export default function Contact() {
   const [form, setForm]           = useState({ name: "", email: "", subject: "", message: "" });
@@ -58,7 +57,7 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Ithuba — South Africa's Bursary Directory</title>
+        <title>Contact Us | Ithuba — South Africa's Student Opportunities Directory</title>
         <meta
           name="description"
           content="Get in touch with the Ithuba team. Report outdated bursary information, ask questions about submissions, or enquire about partnerships. Based in Johannesburg, South Africa."
@@ -70,21 +69,21 @@ export default function Contact() {
         <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
       </Helmet>
 
-      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-5xl px-4 pb-12 sm:px-6 lg:px-8">
 
-{/* Banner */}
-<div className="relative h-56 sm:h-72 overflow-hidden bg-forest-900 -mx-4 sm:-mx-6 lg:-mx-8 mb-10">
-  <img src={CONTACT_IMG} alt="" role="presentation" loading="eager" decoding="async"
-    className="h-full w-full object-cover object-center opacity-45 dark:opacity-25" />
-  <div className="absolute inset-0 bg-gradient-to-t from-forest-900/85 via-forest-900/40 to-transparent" />
-  <div className="absolute bottom-0 left-0 right-0 px-4 pb-8 sm:px-6 lg:px-8">
-    <p className="text-xs font-semibold uppercase tracking-widest text-gold-300 mb-2">Get in touch</p>
-    <h1 className="font-display text-3xl font-semibold text-white sm:text-4xl">Contact us</h1>
-    <p className="mt-2 text-sm leading-6 text-forest-200 max-w-xl">
-      Questions about a listing, a submission, or anything else? We'd love to hear from you.
-    </p>
-  </div>
-</div>
+        {/* Banner */}
+        <div className="relative h-56 sm:h-72 overflow-hidden bg-forest-900 -mx-4 sm:-mx-6 lg:-mx-8 mb-10">
+          <img src="https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=1470&auto=format&fit=crop" alt="" role="presentation" loading="eager" decoding="async"
+            className="h-full w-full object-cover object-center opacity-45 dark:opacity-25" />
+          <div className="absolute inset-0 bg-gradient-to-t from-forest-900/85 via-forest-900/40 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 px-4 pb-8 sm:px-6 lg:px-8">
+            <p className="text-xs font-semibold uppercase tracking-widest text-gold-300 mb-2">Get in touch</p>
+            <h1 className="font-display text-3xl font-semibold text-white sm:text-4xl">Contact us</h1>
+            <p className="mt-2 text-sm leading-6 text-forest-200 max-w-xl">
+              Have a question about a listing, want to report outdated information, or just want to say hello? Fill in the form and we'll get back to you.
+            </p>
+          </div>
+        </div>
 
         <div className="grid gap-8 lg:grid-cols-3">
 

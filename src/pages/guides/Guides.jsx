@@ -2,8 +2,6 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen } from "lucide-react";
 
-const GUIDES_IMG = "https://images.unsplash.com/photo-1650444165219-16e559580e15?q=80&w=1470&auto=format&fit=crop";
-
 const guides = [
   {
     path: "/guides/how-to-apply-for-a-bursary",
@@ -35,6 +33,8 @@ const guides = [
   },
 ];
 
+const GUIDES_IMG = "https://images.unsplash.com/photo-1650444165219-16e559580e15?q=80&w=1470&auto=format&fit=crop";
+
 export default function Guides() {
   return (
     <>
@@ -53,21 +53,21 @@ export default function Guides() {
         <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
       </Helmet>
 
-      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl px-4 pb-12 sm:px-6 lg:px-8">
 
-{/* Banner */}
-<div className="relative h-56 sm:h-72 overflow-hidden bg-forest-900 -mx-4 sm:-mx-6 lg:-mx-8 mb-10">
-  <img src={GUIDES_IMG} alt="" role="presentation" loading="eager" decoding="async"
-    className="h-full w-full object-cover object-center opacity-50 dark:opacity-30" />
-  <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-forest-900/30 to-transparent" />
-  <div className="absolute bottom-0 left-0 right-0 px-4 pb-8 sm:px-6 lg:px-8">
-    <p className="text-xs font-semibold uppercase tracking-widest text-gold-300 mb-2">Resources</p>
-    <h1 className="font-display text-3xl font-semibold text-white sm:text-4xl">Student guides</h1>
-    <p className="mt-2 text-sm leading-6 text-forest-200 max-w-xl">
-      Practical, plain-language guides to help South African students navigate the bursary application process from start to finish.
-    </p>
-  </div>
-</div>
+        {/* Banner */}
+        <div className="relative h-56 sm:h-72 overflow-hidden bg-forest-900 -mx-4 sm:-mx-6 lg:-mx-8 mb-10">
+          <img src={GUIDES_IMG} alt="" role="presentation" loading="eager" decoding="async"
+            className="h-full w-full object-cover object-center opacity-50 dark:opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-forest-900/30 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 px-4 pb-8 sm:px-6 lg:px-8">
+            <p className="text-xs font-semibold uppercase tracking-widest text-gold-300 mb-2">Resources</p>
+            <h1 className="font-display text-3xl font-semibold text-white sm:text-4xl">Student guides</h1>
+            <p className="mt-2 text-sm leading-6 text-forest-200 max-w-xl">
+              Practical, plain-language guides to help South African students navigate the bursary application process from start to finish.
+            </p>
+          </div>
+        </div>
 
         <div className="grid gap-5 sm:grid-cols-2">
           {guides.map((guide) => (

@@ -1,63 +1,99 @@
 // Single source of truth for all category definitions.
-// Used by CategoryPage, CategoryIndex, Footer, and sitemap.
+// Used by OpportunityPage, CategoryPage, Categories, Footer, and sitemap.
 
 export const CATEGORY_TYPES = {
-  type: {
-    label: "Funder type",
-    param: "type",
+  // ── Bursary funder types ──────────────────────────────────────────────────
+  bursary_type: {
+    label: "By bursary funder type",
+    param: "bursary-type",
+    kind: "bursary",
     filterKey: "funder_type",
     values: [
       {
         slug: "government",
         label: "Government Bursaries",
-        description:
-          "Bursaries funded by South African government departments and state-owned entities. These typically include NSFAS, department-specific programmes, and SOE bursaries from Eskom, Transnet, and others.",
-        metaDescription:
-          "Browse South African government bursaries including NSFAS, Eskom, Transnet, and department-funded programmes. Free, searchable directory updated regularly.",
+        description: "Bursaries funded by South African government departments and state-owned entities including NSFAS, Eskom, Transnet, and department-specific programmes.",
+        metaDescription: "Browse South African government bursaries including NSFAS, Eskom, Transnet, and department-funded programmes. Free, searchable directory updated regularly.",
       },
       {
         slug: "corporate",
         label: "Corporate Bursaries",
-        description:
-          "Bursaries offered by South African and multinational companies. Corporate bursaries often include vacation work, mentorship, and employment opportunities after graduation.",
-        metaDescription:
-          "Browse corporate bursaries in South Africa from companies like Sasol, Anglo American, Standard Bank, and MTN. Find funding with employment pathways.",
+        description: "Bursaries offered by South African and multinational companies. Often include vacation work, mentorship, and employment opportunities after graduation.",
+        metaDescription: "Browse corporate bursaries in South Africa from companies like Sasol, Anglo American, Standard Bank, and MTN. Find funding with employment pathways.",
       },
       {
         slug: "ngo",
         label: "NGO & Foundation Bursaries",
-        description:
-          "Bursaries from non-governmental organisations, foundations, and trusts. These often target specific demographics, fields of study, or regions and can be highly competitive.",
-        metaDescription:
-          "Browse NGO and foundation bursaries in South Africa. Find funding from the Allan Gray Orbis Foundation, Rhodes University, and other non-profit funders.",
+        description: "Bursaries from non-governmental organisations, foundations, and trusts. Often target specific demographics, fields of study, or regions.",
+        metaDescription: "Browse NGO and foundation bursaries in South Africa. Find funding from the Allan Gray Orbis Foundation and other non-profit funders.",
       },
     ],
   },
-  field: {
-    label: "Field of study",
-    param: "field",
-    filterKey: "field_of_study",
+
+  // ── Scholarship types ─────────────────────────────────────────────────────
+  scholarship_type: {
+    label: "By scholarship type",
+    param: "scholarship-type",
+    kind: "scholarship",
+    filterKey: "scholarship_type",
     values: [
-      { slug: "engineering",   label: "Engineering Bursaries",    description: "Bursaries for students studying civil, mechanical, electrical, chemical, and mining engineering at South African universities.",           metaDescription: "Find engineering bursaries in South Africa. Browse funding from Eskom, Sasol, Transnet, Anglo American, and more for all engineering disciplines." },
-      { slug: "finance",       label: "Finance & Accounting Bursaries", description: "Bursaries for students studying finance, accounting, auditing, actuarial science, and related commerce disciplines.",          metaDescription: "Browse finance and accounting bursaries in South Africa. Find funding from banks, audit firms, and financial institutions for commerce students." },
-      { slug: "it",            label: "IT & Technology Bursaries", description: "Bursaries for students studying information technology, computer science, software engineering, and related tech disciplines.",      metaDescription: "Find IT and technology bursaries in South Africa. Browse funding from MTN, Telkom, Vodacom, and tech companies for computer science and IT students." },
-      { slug: "medicine",      label: "Medicine & Health Bursaries", description: "Bursaries for students studying medicine, nursing, pharmacy, physiotherapy, and other health sciences.",                        metaDescription: "Browse medicine and health bursaries in South Africa. Find funding for medical, nursing, pharmacy, and allied health students." },
-      { slug: "business",      label: "Business & Management Bursaries", description: "Bursaries for students studying business management, entrepreneurship, marketing, and related disciplines.",                  metaDescription: "Browse business and management bursaries in South Africa. Find funding for students in business, entrepreneurship, and management programmes." },
-      { slug: "law",           label: "Law Bursaries",             description: "Bursaries for students pursuing LLB and other law qualifications at South African universities.",                                    metaDescription: "Find law bursaries in South Africa. Browse funding opportunities for LLB and legal studies students." },
-      { slug: "teaching",      label: "Teaching & Education Bursaries", description: "Bursaries for students studying education and pursuing teaching qualifications, often linked to NSFAS and government programmes.", metaDescription: "Browse teaching and education bursaries in South Africa. Find funding for students pursuing teaching qualifications and education degrees." },
-      { slug: "science",       label: "Science Bursaries",         description: "Bursaries for students studying natural sciences, mathematics, physics, chemistry, and related STEM fields.",                       metaDescription: "Find science bursaries in South Africa. Browse funding for students studying natural sciences, mathematics, physics, and chemistry." },
+      {
+        slug: "merit",
+        label: "Merit Scholarships",
+        description: "Scholarships awarded based on academic excellence. No work-back obligation. Open to students with outstanding results regardless of financial need.",
+        metaDescription: "Browse merit-based scholarships in South Africa. Find scholarships awarded for academic excellence with no work-back obligation.",
+      },
+      {
+        slug: "need-based",
+        label: "Need-Based Scholarships",
+        description: "Scholarships that consider financial need as a primary factor. Often cover full tuition and living costs for students from lower-income households.",
+        metaDescription: "Browse need-based scholarships in South Africa for students who need financial support to access higher education.",
+      },
+      {
+        slug: "community",
+        label: "Community Scholarships",
+        description: "Scholarships for students who demonstrate a commitment to community service and giving back. Often tied to leadership development programmes.",
+        metaDescription: "Browse community scholarships in South Africa for students with a strong record of community service and leadership.",
+      },
+      {
+        slug: "arts",
+        label: "Arts Scholarships",
+        description: "Scholarships for students pursuing creative disciplines — fine arts, music, drama, film, and design. Often include portfolio requirements.",
+        metaDescription: "Browse arts scholarships in South Africa for students studying creative disciplines including fine arts, music, drama, and design.",
+      },
     ],
   },
+
+  // ── Field of study (unified — applies to both) ────────────────────────────
+  field: {
+    label: "By field of study",
+    param: "field",
+    kind: "both",
+    filterKey: "field_of_study",
+    values: [
+      { slug: "engineering", label: "Engineering",        description: "Bursaries and scholarships for civil, mechanical, electrical, chemical, and mining engineering students.",    metaDescription: "Find engineering bursaries and scholarships in South Africa. Browse funding from Eskom, Sasol, Transnet, and more." },
+      { slug: "finance",     label: "Finance & Accounting", description: "Funding for students studying finance, accounting, auditing, actuarial science, and commerce.",             metaDescription: "Browse finance and accounting bursaries and scholarships in South Africa from banks, audit firms, and financial institutions." },
+      { slug: "it",          label: "IT & Technology",    description: "Bursaries and scholarships for computer science, software engineering, cybersecurity, and IT students.",       metaDescription: "Find IT and technology bursaries and scholarships in South Africa from MTN, Telkom, Vodacom, and tech companies." },
+      { slug: "medicine",    label: "Medicine & Health",  description: "Funding for medicine, nursing, pharmacy, physiotherapy, and other health sciences students.",                  metaDescription: "Browse medicine and health bursaries and scholarships in South Africa for medical, nursing, and allied health students." },
+      { slug: "business",    label: "Business",           description: "Bursaries and scholarships for business management, entrepreneurship, marketing, and related disciplines.",    metaDescription: "Browse business and management bursaries and scholarships in South Africa." },
+      { slug: "law",         label: "Law",                description: "Funding for students pursuing LLB and other law qualifications at South African universities.",               metaDescription: "Find law bursaries and scholarships in South Africa for LLB and legal studies students." },
+      { slug: "teaching",    label: "Teaching & Education", description: "Bursaries and scholarships for students pursuing teaching qualifications and education degrees.",           metaDescription: "Browse teaching bursaries and scholarships in South Africa for students pursuing education degrees." },
+      { slug: "science",     label: "Science",            description: "Funding for students studying natural sciences, mathematics, physics, chemistry, and STEM fields.",            metaDescription: "Find science bursaries and scholarships in South Africa for students in STEM fields." },
+    ],
+  },
+
+  // ── Province (bursaries only — scholarships are mostly national) ──────────
   province: {
-    label: "Province",
+    label: "By province",
     param: "province",
+    kind: "bursary",
     filterKey: "province",
     values: [
-      { slug: "gauteng",        label: "Gauteng Bursaries",        description: "Bursaries available to students based in or studying in Gauteng, as well as national bursaries open to Gauteng residents.",         metaDescription: "Browse bursaries available in Gauteng, South Africa. Find provincial and national funding opportunities for students in Johannesburg, Pretoria, and surrounding areas." },
-      { slug: "western-cape",   label: "Western Cape Bursaries",   description: "Bursaries available to students in the Western Cape, including Cape Town and surrounding areas, plus national programmes.",         metaDescription: "Browse bursaries available in the Western Cape, South Africa. Find funding opportunities for students in Cape Town and the broader Western Cape." },
-      { slug: "kwazulu-natal",  label: "KwaZulu-Natal Bursaries",  description: "Bursaries available to students in KwaZulu-Natal, including Durban and surrounding regions, plus national programmes.",           metaDescription: "Browse bursaries available in KwaZulu-Natal, South Africa. Find funding opportunities for students in Durban and the broader KZN region." },
-      { slug: "eastern-cape",   label: "Eastern Cape Bursaries",   description: "Bursaries available in the Eastern Cape, including Port Elizabeth (Gqeberha) and East London, plus national programmes.",         metaDescription: "Browse bursaries available in the Eastern Cape, South Africa. Find funding opportunities for students in Gqeberha, East London, and surrounding areas." },
-      { slug: "national",       label: "National Bursaries",       description: "Bursaries open to students across all South African provinces with no provincial restriction.",                                    metaDescription: "Browse national bursaries available to all South African students regardless of province. Find funding open to applicants from any province." },
+      { slug: "gauteng",       label: "Gauteng",       description: "Bursaries available to students based in or studying in Gauteng, plus national bursaries open to Gauteng residents.",     metaDescription: "Browse bursaries in Gauteng, South Africa. Find provincial and national funding for students in Johannesburg and Pretoria." },
+      { slug: "western-cape",  label: "Western Cape",  description: "Bursaries available to students in the Western Cape including Cape Town and surrounding areas.",                          metaDescription: "Browse bursaries in the Western Cape, South Africa. Find funding for students in Cape Town and the broader Western Cape." },
+      { slug: "kwazulu-natal", label: "KwaZulu-Natal", description: "Bursaries available to students in KwaZulu-Natal including Durban and surrounding regions.",                              metaDescription: "Browse bursaries in KwaZulu-Natal, South Africa. Find funding for students in Durban and the broader KZN region." },
+      { slug: "eastern-cape",  label: "Eastern Cape",  description: "Bursaries available in the Eastern Cape including Port Elizabeth (Gqeberha) and East London.",                           metaDescription: "Browse bursaries in the Eastern Cape, South Africa. Find funding for students in Gqeberha and East London." },
+      { slug: "national",      label: "National",      description: "Bursaries open to students across all South African provinces with no provincial restriction.",                          metaDescription: "Browse national bursaries available to all South African students regardless of province." },
     ],
   },
 };
@@ -70,16 +106,19 @@ export function findCategory(dimension, slug) {
 }
 
 // Match a bursary against a category filter
-export function matchesCategory(bursary, dimension, slug) {
+export function matchesCategory(item, dimension, slug) {
   const dim = CATEGORY_TYPES[dimension];
   if (!dim) return false;
-  const val = (bursary[dim.filterKey] || "").toLowerCase();
+  const val = (item[dim.filterKey] || "").toLowerCase();
+  const s   = slug.toLowerCase();
   if (dimension === "province") {
-    return val === slug.replace("-", " ") || val === "national";
+    return val === s.replace("-", " ") || val === "national";
   }
-  // field matching — partial (e.g. "All fields" bursaries should show under each field)
   if (dimension === "field") {
-    return val.toLowerCase().includes(slug) || val === "all fields";
+    return val.includes(s) || val === "all fields";
   }
-  return val === slug;
+  if (dimension === "scholarship_type") {
+    return val === s;
+  }
+  return val === s;
 }

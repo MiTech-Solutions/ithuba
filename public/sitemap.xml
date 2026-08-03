@@ -25,8 +25,29 @@
   <url><loc>https://ithubahub.co.za/articles/best-bursaries-for-engineering-students</loc><lastmod>2026-07-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ithubahub.co.za/articles/bursaries-for-first-year-students</loc><lastmod>2026-07-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ithubahub.co.za/articles/how-to-write-a-bursary-motivation-letter</loc><lastmod>2026-07-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithubahub.co.za/articles/nsfas-vs-corporate-bursary</loc><lastmod>2026-07-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithubahub.co.za/articles/bursary-vs-student-loan</loc><lastmod>2026-07-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithubahub.co.za/articles/best-bursaries-for-nursing-and-medicine-students</loc><lastmod>2026-07-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithubahub.co.za/articles/best-bursaries-for-it-students</loc><lastmod>2026-07-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithubahub.co.za/articles/best-bursaries-for-accounting-and-finance-students</loc><lastmod>2026-07-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithubahub.co.za/articles/bursaries-with-monthly-stipend</loc><lastmod>2026-07-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithubahub.co.za/articles/what-happens-to-your-bursary-if-you-fail</loc><lastmod>2026-07-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithubahub.co.za/articles/can-you-hold-more-than-one-bursary</loc><lastmod>2026-07-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
 
-  <!-- Funder type categories -->
+  <!-- Opportunity pages (unified bursaries + scholarships by field) -->
+  <url><loc>https://ithubahub.co.za/opportunities/field/engineering</loc><lastmod>2026-07-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithubahub.co.za/opportunities/field/finance</loc><lastmod>2026-07-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithubahub.co.za/opportunities/field/it</loc><lastmod>2026-07-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithubahub.co.za/opportunities/field/medicine</loc><lastmod>2026-07-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ithubahub.co.za/opportunities/field/business</loc><lastmod>2026-07-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithubahub.co.za/opportunities/field/law</loc><lastmod>2026-07-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithubahub.co.za/opportunities/field/teaching</loc><lastmod>2026-07-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithubahub.co.za/opportunities/field/science</loc><lastmod>2026-07-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <!-- Scholarship type pages -->
+  <url><loc>https://ithubahub.co.za/opportunities/scholarship_type/merit</loc><lastmod>2026-07-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithubahub.co.za/opportunities/scholarship_type/need-based</loc><lastmod>2026-07-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithubahub.co.za/opportunities/scholarship_type/community</loc><lastmod>2026-07-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithubahub.co.za/opportunities/scholarship_type/arts</loc><lastmod>2026-07-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ithubahub.co.za/bursaries/type/government</loc><lastmod>2026-07-12</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ithubahub.co.za/bursaries/type/corporate</loc><lastmod>2026-07-12</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ithubahub.co.za/bursaries/type/ngo</loc><lastmod>2026-07-12</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>

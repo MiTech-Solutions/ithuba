@@ -9,6 +9,7 @@ import Bursaries from "./pages/Bursaries";
 import BursaryDetail from "./pages/BursaryDetail";
 import Categories from "./pages/Categories";
 import CategoryPage from "./pages/CategoryPage";
+import OpportunityPage from "./pages/OpportunityPage";
 import Submit from "./pages/Submit";
 import About from "./pages/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -31,6 +32,14 @@ import ArticleTop10Bursaries from "./pages/articles/Top10Bursaries";
 import ArticleEngineeringBursaries from "./pages/articles/EngineeringBursaries";
 import ArticleFirstYearBursaries from "./pages/articles/FirstYearBursaries";
 import ArticleMotivationLetter from "./pages/articles/MotivationLetter";
+import ArticleNSFASvsCorporate from "./pages/articles/NSFASvsCorporate";
+import ArticleBursaryVsLoan from "./pages/articles/BursaryVsLoan";
+import ArticleNursingMedicineBursaries from "./pages/articles/NursingMedicineBursaries";
+import ArticleITBursaries from "./pages/articles/ITBursaries";
+import ArticleFinanceBursaries from "./pages/articles/FinanceBursaries";
+import ArticleStipendBursaries from "./pages/articles/StipendBursaries";
+import ArticleFailYear from "./pages/articles/FailYear";
+import ArticleMultipleBursaries from "./pages/articles/MultipleBursaries";
 
 export default function App() {
   return (
@@ -47,6 +56,7 @@ export default function App() {
                 <Route path="/bursaries/:slug"                                           element={<BursaryDetail />} />
                 <Route path="/bursaries/:dimension/:slug"                                element={<CategoryPage />} />
                 <Route path="/categories"                                                element={<Categories />} />
+                <Route path="/opportunities/:dimension/:slug"                            element={<OpportunityPage />} />
                 <Route path="/submit"                                                    element={<Submit />} />
                 <Route path="/about"                                                     element={<About />} />
                 <Route path="/privacy-policy"                                            element={<PrivacyPolicy />} />
@@ -61,6 +71,14 @@ export default function App() {
                 <Route path="/articles/best-bursaries-for-engineering-students"        element={<ArticleEngineeringBursaries />} />
                 <Route path="/articles/bursaries-for-first-year-students"              element={<ArticleFirstYearBursaries />} />
                 <Route path="/articles/how-to-write-a-bursary-motivation-letter"       element={<ArticleMotivationLetter />} />
+                <Route path="/articles/nsfas-vs-corporate-bursary"                     element={<ArticleNSFASvsCorporate />} />
+                <Route path="/articles/bursary-vs-student-loan"                        element={<ArticleBursaryVsLoan />} />
+                <Route path="/articles/best-bursaries-for-nursing-and-medicine-students" element={<ArticleNursingMedicineBursaries />} />
+                <Route path="/articles/best-bursaries-for-it-students"                 element={<ArticleITBursaries />} />
+                <Route path="/articles/best-bursaries-for-accounting-and-finance-students" element={<ArticleFinanceBursaries />} />
+                <Route path="/articles/bursaries-with-monthly-stipend"                 element={<ArticleStipendBursaries />} />
+                <Route path="/articles/what-happens-to-your-bursary-if-you-fail"       element={<ArticleFailYear />} />
+                <Route path="/articles/can-you-hold-more-than-one-bursary"             element={<ArticleMultipleBursaries />} />
                 <Route path="/guides"                                                    element={<Guides />} />
                 <Route path="/guides/how-to-apply-for-a-bursary"                        element={<HowToApply />} />
                 <Route path="/guides/difference-between-bursaries-and-scholarships"     element={<BursaryVsScholarship />} />

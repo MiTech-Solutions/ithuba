@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight, FileText } from "lucide-react";
 
 const OG_IMG = "https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png";
-const ARTICLES_IMG = "https://i.postimg.cc/Zn6m1kM6/ithuba-daily-articles-section-banner.png";
 
 export const articles = [
   {
@@ -54,6 +53,70 @@ export const articles = [
     readTime: "9 min read",
     featured: false,
   },
+  {
+    path: "/articles/nsfas-vs-corporate-bursary",
+    title: "NSFAS vs corporate bursary — which is better for you?",
+    description: "A detailed comparison of NSFAS and corporate bursaries — coverage, work-back obligations, eligibility, pros and cons, and which suits your situation.",
+    tag: "Comparison",
+    readTime: "9 min read",
+    featured: false,
+  },
+  {
+    path: "/articles/bursary-vs-student-loan",
+    title: "Bursary vs student loan — which should you choose?",
+    description: "Should you apply for a bursary or take a student loan? A detailed comparison covering repayment, interest, eligibility, and career flexibility.",
+    tag: "Comparison",
+    readTime: "8 min read",
+    featured: false,
+  },
+  {
+    path: "/articles/best-bursaries-for-nursing-and-medicine-students",
+    title: "Best bursaries for nursing and medicine students in South Africa",
+    description: "The best South African bursaries for nursing, medicine and healthcare students — Department of Health, hospital groups, and NGO funding with application tips.",
+    tag: "Field Guide",
+    readTime: "7 min read",
+    featured: false,
+  },
+  {
+    path: "/articles/best-bursaries-for-it-students",
+    title: "Best bursaries for IT and computer science students in South Africa",
+    description: "The best South African bursaries for IT and computer science students — Telkom, MTN, Vodacom, and the major banks, with tips on standing out.",
+    tag: "Field Guide",
+    readTime: "7 min read",
+    featured: false,
+  },
+  {
+    path: "/articles/best-bursaries-for-accounting-and-finance-students",
+    title: "Best bursaries for accounting and finance students in South Africa",
+    description: "The best South African bursaries for accounting and finance students — ABSA, Standard Bank, FNB, Nedbank, PwC, Deloitte and more.",
+    tag: "Field Guide",
+    readTime: "7 min read",
+    featured: false,
+  },
+  {
+    path: "/articles/bursaries-with-monthly-stipend",
+    title: "Bursaries that include a monthly stipend in South Africa",
+    description: "Which South African bursaries include a monthly living allowance or stipend? What to expect and which funders are most generous.",
+    tag: "Funding Guide",
+    readTime: "6 min read",
+    featured: false,
+  },
+  {
+    path: "/articles/what-happens-to-your-bursary-if-you-fail",
+    title: "What happens to your bursary if you fail a year?",
+    description: "Fail a module or repeat a year? Understand exactly what happens to your bursary — by funder type — and how to appeal.",
+    tag: "Student Advice",
+    readTime: "7 min read",
+    featured: false,
+  },
+  {
+    path: "/articles/can-you-hold-more-than-one-bursary",
+    title: "Can you hold more than one bursary at a time in South Africa?",
+    description: "The rules around holding multiple bursaries, what you must disclose, and what to do when you receive more than one offer.",
+    tag: "Student Advice",
+    readTime: "6 min read",
+    featured: false,
+  },
 ];
 
 export default function Articles() {
@@ -69,21 +132,21 @@ export default function Articles() {
         <meta property="og:image" content={OG_IMG} />
       </Helmet>
 
-      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl px-4 pb-12 sm:px-6 lg:px-8">
 
-{/* Banner */}
-<div className="relative h-56 sm:h-72 overflow-hidden bg-forest-900 -mx-4 sm:-mx-6 lg:-mx-8 mb-10">
-  <img src={ARTICLES_IMG} alt="" role="presentation" loading="eager" decoding="async"
-    className="h-full w-full object-cover object-center opacity-60 dark:opacity-40" />
-  <div className="absolute inset-0 bg-gradient-to-t from-forest-900/85 via-forest-900/40 to-transparent" />
-  <div className="absolute bottom-0 left-0 right-0 px-4 pb-8 sm:px-6 lg:px-8">
-    <p className="text-xs font-semibold uppercase tracking-widest text-gold-300 mb-2">Resources</p>
-    <h1 className="font-display text-3xl font-semibold text-white sm:text-4xl">Articles & funding guides</h1>
-    <p className="mt-2 text-sm leading-6 text-forest-200 max-w-xl">
-      In-depth articles to help South African students understand their funding options and make the most of every opportunity.
-    </p>
-  </div>
-</div>
+        {/* Banner */}
+        <div className="relative h-56 sm:h-72 overflow-hidden bg-forest-900 -mx-4 sm:-mx-6 lg:-mx-8 mb-10">
+          <img src="https://i.postimg.cc/Zn6m1kM6/ithuba-daily-articles-section-banner.png" alt="" role="presentation" loading="eager" decoding="async"
+            className="h-full w-full object-cover object-center opacity-60 dark:opacity-40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-forest-900/85 via-forest-900/40 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 px-4 pb-8 sm:px-6 lg:px-8">
+            <p className="text-xs font-semibold uppercase tracking-widest text-gold-300 mb-2">Resources</p>
+            <h1 className="font-display text-3xl font-semibold text-white sm:text-4xl">Articles & funding guides</h1>
+            <p className="mt-2 text-sm leading-6 text-forest-200 max-w-xl">
+              In-depth articles to help South African students understand their funding options, navigate applications, and make the most of every opportunity.
+            </p>
+          </div>
+        </div>
 
         <div className="grid gap-5 sm:grid-cols-2">
           {articles.map((article) => (

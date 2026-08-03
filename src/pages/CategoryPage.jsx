@@ -5,8 +5,6 @@ import { useBursaries } from "../hooks/useBursaries";
 import { findCategory, matchesCategory } from "../data/categories";
 import BursaryCard from "../components/bursaries/BursaryCard";
 
-const CATEGORY_IMG = "https://images.unsplash.com/photo-1537202108838-e7072bad1927?q=80&w=746&auto=format&fit=crop";
-
 export default function CategoryPage() {
   const { dimension, slug }           = useParams();
   const { bursaries, loading, error } = useBursaries();
@@ -65,7 +63,7 @@ export default function CategoryPage() {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
 
         {/* Breadcrumb */}
         <nav className="mb-6 flex items-center gap-2 text-sm text-forest-500 dark:text-forest-400">
@@ -76,29 +74,28 @@ export default function CategoryPage() {
           <span className="text-forest-800 dark:text-forest-200 font-medium">{category.label}</span>
         </nav>
 
+        {/* Banner */}
+        <div className="relative h-48 sm:h-64 overflow-hidden bg-forest-900 -mx-4 sm:-mx-6 lg:-mx-8 mb-10">
+          <img src="https://images.unsplash.com/photo-1537202108838-e7072bad1927?q=80&w=746&auto=format&fit=crop" alt="" role="presentation" loading="lazy" decoding="async"
+            className="h-full w-full object-cover object-center opacity-40 dark:opacity-25" />
+          <div className="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/40 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 px-4 pb-6 sm:px-6 lg:px-8">
+            <p className="text-xs font-semibold uppercase tracking-widest text-gold-300 mb-1">
+              {dimension === "type" ? "Funder type" : dimension === "field" ? "Field of study" : "Province"}
+            </p>
+            <h1 className="font-display text-2xl font-semibold text-white sm:text-3xl">{category.label}</h1>
+            {!loading && (
+              <p className="mt-1 text-sm text-forest-300">
+                {filtered.length} {filtered.length === 1 ? "bursary" : "bursaries"} found
+              </p>
+            )}
+          </div>
+        </div>
 
-{/* Banner */}
-<div className="relative h-48 sm:h-64 overflow-hidden bg-forest-900 -mx-4 sm:-mx-6 lg:-mx-8 mb-10">
-  <img src={CATEGORY_IMG} alt="" role="presentation" loading="lazy" decoding="async"
-    className="h-full w-full object-cover object-center opacity-40 dark:opacity-25" />
-  <div className="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/40 to-transparent" />
-  <div className="absolute bottom-0 left-0 right-0 px-4 pb-6 sm:px-6 lg:px-8">
-    <p className={`text-xs font-semibold uppercase tracking-widest text-gold-300 mb-1`}>
-      {dimension === "type" ? "Funder type" : dimension === "field" ? "Field of study" : "Province"}
-    </p>
-    <h1 className="font-display text-2xl font-semibold text-white sm:text-3xl">{category.label}</h1>
-    {!loading && (
-      <p className="mt-1 text-sm text-forest-300">
-        {filtered.length} {filtered.length === 1 ? "bursary" : "bursaries"} found
-      </p>
-    )}
-  </div>
-</div>
-
-{/* Description below banner */}
-<p className="text-sm leading-7 text-forest-600 dark:text-forest-400 mb-8 max-w-2xl">
-  {category.description}
-</p>
+        {/* Description */}
+        <p className="text-sm leading-7 text-forest-600 dark:text-forest-400 mb-8 max-w-2xl">
+          {category.description}
+        </p>
 
         {/* Loading skeletons */}
         {loading && (

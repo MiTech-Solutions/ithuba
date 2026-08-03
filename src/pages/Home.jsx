@@ -89,14 +89,14 @@ function StatsBar({ bursaryCount, scholarshipCount }) {
 }
 
 const HIGHLIGHT_CATEGORIES = [
-  { dimension: "type",     slug: "government",   label: "Government",   icon: Briefcase },
-  { dimension: "type",     slug: "corporate",    label: "Corporate",    icon: Briefcase },
-  { dimension: "field",    slug: "engineering",  label: "Engineering",  icon: GraduationCap },
-  { dimension: "field",    slug: "finance",      label: "Finance",      icon: GraduationCap },
-  { dimension: "field",    slug: "it",           label: "IT",           icon: GraduationCap },
-  { dimension: "field",    slug: "medicine",     label: "Medicine",     icon: GraduationCap },
-  { dimension: "province", slug: "gauteng",      label: "Gauteng",      icon: MapPin },
-  { dimension: "province", slug: "western-cape", label: "Western Cape", icon: MapPin },
+  { dimension: "bursary_type", slug: "government",   label: "Government",   icon: Briefcase },
+  { dimension: "bursary_type", slug: "corporate",    label: "Corporate",    icon: Briefcase },
+  { dimension: "field",        slug: "engineering",  label: "Engineering",  icon: GraduationCap },
+  { dimension: "field",        slug: "finance",      label: "Finance",      icon: GraduationCap },
+  { dimension: "field",        slug: "it",           label: "IT",           icon: GraduationCap },
+  { dimension: "field",        slug: "medicine",     label: "Medicine",     icon: GraduationCap },
+  { dimension: "province",     slug: "gauteng",      label: "Gauteng",      icon: MapPin },
+  { dimension: "province",     slug: "western-cape", label: "Western Cape", icon: MapPin },
 ];
 
 export default function Home() {
@@ -109,7 +109,8 @@ export default function Home() {
 
   function countFor(dimension, slug) {
     if (bLoading) return null;
-    return bursaries.filter((b) => matchesCategory(b, dimension, slug)).length;
+    const dim = dimension === "bursary_type" ? "bursary_type" : dimension;
+    return bursaries.filter((b) => matchesCategory(b, dim, slug)).length;
   }
 
   return (
@@ -311,8 +312,13 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             {HIGHLIGHT_CATEGORIES.map((cat) => {
               const count = countFor(cat.dimension, cat.slug);
+              const linkTo = cat.dimension === "bursary_type"
+                ? `/bursaries/type/${cat.slug}`
+                : cat.dimension === "province"
+                ? `/bursaries/province/${cat.slug}`
+                : `/opportunities/${cat.dimension}/${cat.slug}`;
               return (
-                <Link key={`${cat.dimension}-${cat.slug}`} to={`/bursaries/${cat.dimension}/${cat.slug}`} className="group flex flex-col rounded-2xl border border-forest-200 dark:border-forest-700 bg-white dark:bg-forest-900 p-4 transition hover:border-forest-400 dark:hover:border-forest-500 hover:shadow-sm">
+                <Link key={`${cat.dimension}-${cat.slug}`} to={linkTo} className="group flex flex-col rounded-2xl border border-forest-200 dark:border-forest-700 bg-white dark:bg-forest-900 p-4 transition hover:border-forest-400 dark:hover:border-forest-500 hover:shadow-sm">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-forest-100 dark:bg-forest-800 text-forest-600 dark:text-forest-300">
                       <cat.icon size={15} />

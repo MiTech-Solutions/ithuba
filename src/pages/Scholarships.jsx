@@ -70,7 +70,7 @@ export default function Scholarships() {
   return (
     <>
       <Helmet>
-        <title>Scholarships South Africa 2025/26 | Ithuba</title>
+        <title>Scholarships South Africa 2026 | Ithuba</title>
         <meta name="description" content="Browse South African scholarships by field of study, scholarship type, and province. Find merit, need-based, and community scholarships from top funders." />
         <link rel="canonical" href="https://ithubahub.co.za/scholarships" />
         <meta property="og:title" content="Scholarships South Africa | Ithuba" />

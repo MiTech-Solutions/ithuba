@@ -110,7 +110,7 @@ export default function BursaryDetail() {
   return (
     <>
       <Helmet>
-        <title>{bursary.name} | Ithuba Bursary Directory</title>
+        <title>{bursary.name} | Ithuba</title>
         <meta
           name="description"
           content={`${bursary.name} offered by ${bursary.funder}. ${bursary.field_of_study ? `Field: ${bursary.field_of_study}.` : ""} ${bursary.value ? `Value: ${bursary.value}.` : ""} ${bursary.deadline ? `Deadline: ${bursary.deadline}.` : ""} Find and apply for South African bursaries on Ithuba.`}
