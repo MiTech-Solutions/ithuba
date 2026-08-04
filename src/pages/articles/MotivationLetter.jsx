@@ -75,6 +75,8 @@ export default function ArticleMotivationLetter() {
         <meta property="og:description" content="Step-by-step guide to writing a bursary motivation letter that stands out — structure, examples, do's and don'ts." />
         <meta property="og:url" content="https://ithubahub.co.za/articles/how-to-write-a-bursary-motivation-letter" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={OG_IMG} />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [

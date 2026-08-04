@@ -38,14 +38,6 @@ export const articles = [
     featured: false,
   },
   {
-    path: "/articles/bursaries-for-first-year-students",
-    title: "Bursaries for first-year students in South Africa",
-    description: "Everything first-year and Grade 12 students need to know about applying for bursaries — when to apply, what funders look for, and which bursaries are available.",
-    tag: "Student Guide",
-    readTime: "8 min read",
-    featured: false,
-  },
-  {
     path: "/articles/how-to-write-a-bursary-motivation-letter",
     title: "How to write a winning bursary motivation letter",
     description: "Step-by-step guide to writing a bursary motivation letter that stands out — six-part structure with examples, do’s and don’ts, formatting tips, and a final checklist.",
@@ -130,6 +122,8 @@ export default function Articles() {
         <meta property="og:description" content="In-depth articles on South African student funding — NSFAS, bursaries, scholarships, and more." />
         <meta property="og:url" content="https://ithubahub.co.za/articles" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={OG_IMG} />
       </Helmet>
 
       <div className="mx-auto max-w-4xl px-4 pb-12 sm:px-6 lg:px-8">

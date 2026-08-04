@@ -1,1 +1,7 @@
+# API routes must come before SPA catch-all
+/api/bursaries/.netlify/functions/bursaries 200
+/api/bursaries/* /.netlify/functions/bursaries/:splat 200
+/api/newsletter /.netlify/functions/newsletter 200
+
+# SPA catch-all — must be last
 /* /index.html 200

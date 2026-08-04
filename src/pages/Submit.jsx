@@ -93,6 +93,10 @@ export default function Submit() {
         <meta property="og:description" content="Submit a South African bursary or scholarship to the Ithuba directory. Free and takes less than two minutes." />
         <meta property="og:url" content="https://ithubahub.co.za/submit" />
         <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Submit a Bursary or Scholarship | Ithuba" />
+        <meta name="twitter:description" content="Submit a South African bursary or scholarship to the Ithuba directory for free." />
+        <meta name="twitter:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
       </Helmet>
 
       <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6 lg:px-8">

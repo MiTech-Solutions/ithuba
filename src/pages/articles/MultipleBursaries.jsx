@@ -38,6 +38,8 @@ export default function ArticleMultipleBursaries() {
         <meta property="og:description" content="Can South African students hold multiple bursaries simultaneously? The rules, exceptions, and what to disclose." />
         <meta property="og:url" content="https://ithubahub.co.za/articles/can-you-hold-more-than-one-bursary" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={OG_IMG} />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [

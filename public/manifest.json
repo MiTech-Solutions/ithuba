@@ -1,0 +1,17 @@
+{
+  "name": "Ithuba — Student Opportunities",
+  "short_name": "Ithuba",
+  "description": "South Africa's free bursary and scholarship directory",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf8f3",
+  "theme_color": "#1e3f21",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

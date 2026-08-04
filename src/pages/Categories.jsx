@@ -63,6 +63,10 @@ export default function Categories() {
         <meta property="og:description" content="Browse South African bursaries and scholarships by funder type, scholarship type, field of study, and province." />
         <meta property="og:url" content="https://ithubahub.co.za/categories" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Bursaries & Scholarships Categories | Ithuba" />
+        <meta name="twitter:description" content="Browse South African bursaries and scholarships by funder type, scholarship type, field of study, and province." />
+        <meta name="twitter:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 

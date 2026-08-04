@@ -84,6 +84,8 @@ export default function ArticleBursaryVsLoan() {
         <meta property="og:description" content="Bursary or student loan? A detailed comparison covering repayment, interest, eligibility, and career flexibility." />
         <meta property="og:url" content="https://ithubahub.co.za/articles/bursary-vs-student-loan" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={OG_IMG} />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [

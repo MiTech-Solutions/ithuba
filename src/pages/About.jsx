@@ -15,6 +15,10 @@ export default function About() {
         <meta property="og:description" content="Ithuba is a free South African bursary directory helping students find funding opportunities from government, corporate, and NGO funders." />
         <meta property="og:url" content="https://ithubahub.co.za/about" />
         <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Ithuba | South Africa's Student Opportunities Directory" />
+        <meta name="twitter:description" content="Ithuba is South Africa's free bursary and scholarship directory, built by MiTechSolutions." />
+        <meta name="twitter:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "AboutPage",

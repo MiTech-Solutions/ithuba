@@ -41,6 +41,8 @@ export default function ArticleFirstYearBursaries() {
         <meta property="og:description" content="Everything first-year students need to know about applying for bursaries in South Africa — when to apply, what funders look for, and which bursaries are available." />
         <meta property="og:url" content="https://ithubahub.co.za/articles/bursaries-for-first-year-students" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={OG_IMG} />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [

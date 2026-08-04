@@ -37,6 +37,8 @@ export default function ArticleFinanceBursaries() {
         <meta property="og:description" content="The best South African bursaries for accounting and finance students — banks, audit firms, and insurers with deadlines and apply links." />
         <meta property="og:url" content="https://ithubahub.co.za/articles/best-bursaries-for-accounting-and-finance-students" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={OG_IMG} />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
