@@ -36,11 +36,14 @@ export default function ArticleEngineeringBursaries() {
           name="description"
           content="Find the best bursaries for engineering students in South Africa. Eskom, Sasol, Transnet, Anglo American and more — with application links and deadlines."
         />
+        <meta name="description" content="The best South African bursaries for engineering students — Eskom, Sasol, Transnet and more with deadlines and apply links." />
         <link rel="canonical" href="https://ithubahub.co.za/articles/best-bursaries-for-engineering-students" />
         <meta property="og:title" content="Best Bursaries for Engineering Students in South Africa | Ithuba" />
         <meta property="og:description" content="The best South African bursaries for engineering students — Eskom, Sasol, Transnet, Anglo American and more with deadlines and apply links." />
         <meta property="og:url" content="https://ithubahub.co.za/articles/best-bursaries-for-engineering-students" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:title" content="Best Bursaries for Engineering Students in South Africa | Ithuba" />
+        <meta name="twitter:description" content="The best South African bursaries for engineering students — Eskom, Sasol, Transnet and more." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={OG_IMG} />
         <script type="application/ld+json">{JSON.stringify({

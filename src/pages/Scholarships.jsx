@@ -77,6 +77,8 @@ export default function Scholarships() {
         <meta property="og:description" content="Browse South African scholarships by field of study, scholarship type, and province." />
         <meta property="og:url" content="https://ithubahub.co.za/scholarships" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:title" content="Scholarships South Africa 2026 | Ithuba" />
+        <meta name="twitter:description" content="Browse South African scholarships by field of study, scholarship type, and province." />
         {!loading && scholarships.length > 0 && (
           <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
         )}

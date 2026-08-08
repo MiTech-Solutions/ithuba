@@ -49,11 +49,14 @@ export default function GuideHowToApply() {
           name="description"
           content="Step-by-step guide to applying for a bursary in South Africa. From checking eligibility to preparing documents, motivation letters, and interviews. Free advice from Ithuba."
         />
+        <meta name="description" content="Step-by-step guide to applying for a South African bursary — eligibility, documents, motivation letters, and interviews." />
         <link rel="canonical" href="https://ithubahub.co.za/guides/how-to-apply-for-a-bursary" />
         <meta property="og:title" content="How to Apply for a Bursary in South Africa | Ithuba" />
         <meta property="og:description" content="Step-by-step guide to applying for a South African bursary — eligibility, documents, motivation letters, and interviews." />
         <meta property="og:url" content="https://ithubahub.co.za/guides/how-to-apply-for-a-bursary" />
         <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+        <meta name="twitter:title" content="How to Apply for a Bursary in South Africa | Ithuba" />
+        <meta name="twitter:description" content="Step-by-step guide to applying for a South African bursary — eligibility, documents, motivation letters, and interviews." />
         <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ithubahub.co.za"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://ithubahub.co.za/guides"},{"@type":"ListItem","position":3,"name":"How to apply for a bursary","item":"https://ithubahub.co.za/guides/how-to-apply-for-a-bursary"}]})}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

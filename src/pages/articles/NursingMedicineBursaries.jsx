@@ -37,6 +37,8 @@ export default function ArticleNursingMedicineBursaries() {
         <meta property="og:description" content="The best South African bursaries for nursing, medicine and healthcare students — with deadlines, requirements and application links." />
         <meta property="og:url" content="https://ithubahub.co.za/articles/best-bursaries-for-nursing-and-medicine-students" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:title" content="Best Bursaries for Nursing & Medicine Students | Ithuba" />
+        <meta name="twitter:description" content="The best South African bursaries for nursing, medicine and healthcare students with application tips." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={OG_IMG} />
         <script type="application/ld+json">{JSON.stringify({

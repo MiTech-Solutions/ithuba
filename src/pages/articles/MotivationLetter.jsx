@@ -70,11 +70,14 @@ export default function ArticleMotivationLetter() {
           name="description"
           content="Step-by-step guide to writing a strong bursary motivation letter in South Africa. Includes structure, examples, do's and don'ts, and a complete sample letter."
         />
+        <meta name="description" content="Step-by-step guide to writing a bursary motivation letter — structure, examples, do's and don'ts, and a final checklist." />
         <link rel="canonical" href="https://ithubahub.co.za/articles/how-to-write-a-bursary-motivation-letter" />
         <meta property="og:title" content="How to Write a Winning Bursary Motivation Letter | Ithuba" />
         <meta property="og:description" content="Step-by-step guide to writing a bursary motivation letter that stands out — structure, examples, do's and don'ts." />
         <meta property="og:url" content="https://ithubahub.co.za/articles/how-to-write-a-bursary-motivation-letter" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:title" content="How to Write a Winning Bursary Motivation Letter | Ithuba" />
+        <meta name="twitter:description" content="Step-by-step guide to writing a bursary motivation letter that stands out — structure, examples and checklist." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={OG_IMG} />
         <script type="application/ld+json">{JSON.stringify({

@@ -148,6 +148,8 @@ export default function Home() {
             },
           ],
         })}</script>
+              <meta name="twitter:title" content="Ithuba — South Africa's Student Opportunities Directory" />
+        <meta name="twitter:description" content="Find bursaries and scholarships for South African students. Free, searchable, and updated regularly." />
       </Helmet>
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}

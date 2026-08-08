@@ -60,6 +60,8 @@ export default function CategoryPage() {
         <meta property="og:description" content={category.metaDescription} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+        <meta name="twitter:title" content="Bursary Category | Ithuba" />
+        <meta name="twitter:description" content="Browse South African bursaries by category — field of study, funder type, and province." />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 

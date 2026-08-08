@@ -5,8 +5,16 @@ export default function Terms() {
     <>
       <Helmet>
         <title>Terms of Use | Ithuba</title>
+        <meta name="description" content="Ithuba terms of use. Conditions governing your use of the Ithuba student opportunities directory." />
         <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href="https://ithubahub.co.za/terms" />
+              <meta property="og:title" content="Terms of Use | Ithuba" />
+        <meta property="og:description" content="Terms and conditions governing use of the Ithuba student opportunities directory." />
+        <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+        <meta name="twitter:title" content="Terms of Use | Ithuba" />
+        <meta name="twitter:description" content="Terms and conditions governing use of the Ithuba student opportunities directory." />
+        <meta name="twitter:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+              <meta property="og:url" content="https://ithubahub.co.za/terms" />
       </Helmet>
 
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">

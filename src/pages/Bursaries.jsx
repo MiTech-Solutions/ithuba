@@ -94,6 +94,8 @@ export default function Bursaries() {
         {!loading && bursaries.length > 0 && (
           <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
         )}
+              <meta name="twitter:title" content="Browse South African Bursaries | Ithuba" />
+        <meta name="twitter:description" content="Search and filter South African bursaries by field of study, funder type, province, and study level." />
       </Helmet>
 
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">

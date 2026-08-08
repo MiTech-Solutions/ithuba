@@ -89,6 +89,8 @@ export default function ScholarshipDetail() {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={OG_IMG} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+              <meta name="twitter:title" content={`${scholarship.name} | Ithuba`} />
+        <meta name="twitter:description" content={`${scholarship.name} offered by ${scholarship.funder}. Find requirements, deadline and apply on Ithuba.`} />
       </Helmet>
 
       <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">

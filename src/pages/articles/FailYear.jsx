@@ -38,6 +38,8 @@ export default function ArticleFailYear() {
         <meta property="og:description" content="Fail a module or repeat a year? Here's exactly what happens to your South African bursary and what you can do about it." />
         <meta property="og:url" content="https://ithubahub.co.za/articles/what-happens-to-your-bursary-if-you-fail" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:title" content="What Happens to Your Bursary if You Fail a Year? | Ithuba" />
+        <meta name="twitter:description" content="Fail a module or repeat a year? Understand exactly what happens to your bursary and how to appeal." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={OG_IMG} />
         <script type="application/ld+json">{JSON.stringify({

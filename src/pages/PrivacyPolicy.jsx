@@ -5,8 +5,16 @@ export default function PrivacyPolicy() {
     <>
       <Helmet>
         <title>Privacy Policy | Ithuba</title>
+        <meta name="description" content="Ithuba privacy policy. How we collect, use, and protect your data in compliance with South African data protection laws." />
         <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href="https://ithubahub.co.za/privacy-policy" />
+              <meta property="og:title" content="Privacy Policy | Ithuba" />
+        <meta property="og:description" content="Ithuba privacy policy — how we collect, use, and protect your personal information." />
+        <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+        <meta name="twitter:title" content="Privacy Policy | Ithuba" />
+        <meta name="twitter:description" content="Ithuba privacy policy — how we collect, use, and protect your personal information." />
+        <meta name="twitter:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+              <meta property="og:url" content="https://ithubahub.co.za/privacy-policy" />
       </Helmet>
 
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">

@@ -36,11 +36,14 @@ export default function ArticleFirstYearBursaries() {
           name="description"
           content="Find bursaries available to first-year and Grade 12 students in South Africa. Learn when to apply, what funders look for, and how to stand out as a first-year applicant."
         />
+        <meta name="description" content="Everything first-year and Grade 12 students need to know about applying for bursaries in South Africa." />
         <link rel="canonical" href="https://ithubahub.co.za/articles/bursaries-for-first-year-students" />
         <meta property="og:title" content="Bursaries for First-Year Students in South Africa | Ithuba" />
         <meta property="og:description" content="Everything first-year students need to know about applying for bursaries in South Africa — when to apply, what funders look for, and which bursaries are available." />
         <meta property="og:url" content="https://ithubahub.co.za/articles/bursaries-for-first-year-students" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:title" content="Bursaries for First-Year Students in South Africa | Ithuba" />
+        <meta name="twitter:description" content="Everything first-year and Grade 12 students need to know about applying for bursaries in South Africa." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={OG_IMG} />
         <script type="application/ld+json">{JSON.stringify({

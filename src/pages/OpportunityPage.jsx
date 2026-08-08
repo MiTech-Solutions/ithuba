@@ -65,6 +65,8 @@ export default function OpportunityPage() {
         <meta property="og:description" content={category.metaDescription} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:title" content="Student Opportunities | Ithuba" />
+        <meta name="twitter:description" content="Browse South African bursaries and scholarships by category on Ithuba." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",

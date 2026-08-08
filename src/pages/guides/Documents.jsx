@@ -90,11 +90,14 @@ export default function GuideDocuments() {
           name="description"
           content="Full checklist of documents required for South African bursary applications — ID, academic transcripts, proof of income, motivation letters, references, and more."
         />
+        <meta name="description" content="Full checklist of every document you'll need for a South African bursary application — certified IDs, transcripts, income proof and more." />
         <link rel="canonical" href="https://ithubahub.co.za/guides/documents-you-need-before-applying" />
         <meta property="og:title" content="Documents You Need Before Applying for a Bursary | Ithuba" />
         <meta property="og:description" content="Full checklist of every document required for South African bursary applications — certified IDs, transcripts, proof of income, motivation letters, and references." />
         <meta property="og:url" content="https://ithubahub.co.za/guides/documents-you-need-before-applying" />
         <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+        <meta name="twitter:title" content="Documents You Need Before Applying for a Bursary | Ithuba" />
+        <meta name="twitter:description" content="Full checklist of every document you'll need for a South African bursary application — certified IDs, transcripts, income proof and more." />
         <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ithubahub.co.za"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://ithubahub.co.za/guides"},{"@type":"ListItem","position":3,"name":"Documents checklist","item":"https://ithubahub.co.za/guides/documents-you-need-before-applying"}]})}</script>
       </Helmet>
 

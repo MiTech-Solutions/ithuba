@@ -79,11 +79,14 @@ export default function ArticleBursaryVsLoan() {
           name="description"
           content="Should you apply for a bursary or take a student loan? A detailed comparison of bursaries and student loans in South Africa — repayment, interest, eligibility, and which is right for you."
         />
+        <meta name="description" content="Should you apply for a bursary or take a student loan? A detailed comparison covering repayment, interest, eligibility and career flexibility." />
         <link rel="canonical" href="https://ithubahub.co.za/articles/bursary-vs-student-loan" />
         <meta property="og:title" content="Bursary vs Student Loan — Which Should You Choose? | Ithuba" />
         <meta property="og:description" content="Bursary or student loan? A detailed comparison covering repayment, interest, eligibility, and career flexibility." />
         <meta property="og:url" content="https://ithubahub.co.za/articles/bursary-vs-student-loan" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:title" content="Bursary vs Student Loan — Which Should You Choose? | Ithuba" />
+        <meta name="twitter:description" content="Should you apply for a bursary or take a student loan? A detailed comparison covering repayment, interest and career flexibility." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={OG_IMG} />
         <script type="application/ld+json">{JSON.stringify({

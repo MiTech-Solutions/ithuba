@@ -48,11 +48,14 @@ export default function ArticleNSFAS() {
           name="description"
           content="Complete guide to NSFAS 2026 in South Africa. How to apply, eligibility requirements, what NSFAS covers, allowances, appeals, and frequently asked questions."
         />
+        <meta name="description" content="Complete guide to NSFAS 2026 — eligibility, how to apply, what it covers, allowances, appeals, and FAQs." />
         <link rel="canonical" href="https://ithubahub.co.za/articles/nsfas-2026-guide" />
         <meta property="og:title" content="NSFAS 2026 — Everything You Need to Know | Ithuba" />
         <meta property="og:description" content="Complete guide to NSFAS 2026. How to apply, eligibility, allowances, appeals, and everything South African students need to know." />
         <meta property="og:url" content="https://ithubahub.co.za/articles/nsfas-2026-guide" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:title" content="NSFAS 2026 — Everything You Need to Know | Ithuba" />
+        <meta name="twitter:description" content="Complete guide to NSFAS 2026 — eligibility, how to apply, what it covers, allowances, appeals and FAQs." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={OG_IMG} />
         <script type="application/ld+json">{JSON.stringify({

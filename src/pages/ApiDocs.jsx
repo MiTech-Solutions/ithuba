@@ -148,6 +148,9 @@ export default function ApiDocs() {
         <meta property="og:description" content="Free public API for South African bursary data. No auth required. Filter by type, field, province and more. JSON responses." />
         <meta property="og:url" content="https://ithubahub.co.za/api-docs" />
         <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+        <meta name="twitter:title" content="Bursary API Docs | Ithuba" />
+        <meta name="twitter:description" content="Free public API for South African bursary data. No auth required. Filter by type, field, province and more." />
+              <meta name="description" content="Free public API for South African bursary data. Filter by field, funder type, province. JSON responses, no authentication required." />
       </Helmet>
 
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">

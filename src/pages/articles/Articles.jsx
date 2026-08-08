@@ -122,6 +122,8 @@ export default function Articles() {
         <meta property="og:description" content="In-depth articles on South African student funding — NSFAS, bursaries, scholarships, and more." />
         <meta property="og:url" content="https://ithubahub.co.za/articles" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:title" content="Articles & Funding Guides | Ithuba" />
+        <meta name="twitter:description" content="In-depth articles on South African student funding — NSFAS, bursaries, scholarships, and more." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={OG_IMG} />
       </Helmet>

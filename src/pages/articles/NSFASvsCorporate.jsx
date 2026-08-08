@@ -116,11 +116,14 @@ export default function ArticleNSFASvsCorporate() {
           name="description"
           content="Detailed comparison of NSFAS vs corporate bursaries in South Africa. Understand the differences in coverage, work-back obligations, eligibility, and which is right for your situation."
         />
+        <meta name="description" content="Detailed comparison of NSFAS and corporate bursaries — coverage, work-back obligations, eligibility, and which suits your situation." />
         <link rel="canonical" href="https://ithubahub.co.za/articles/nsfas-vs-corporate-bursary" />
         <meta property="og:title" content="NSFAS vs Corporate Bursary — Which is Better for You? | Ithuba" />
         <meta property="og:description" content="NSFAS or corporate bursary? A detailed comparison of coverage, work-back obligations, eligibility, and which suits your situation best." />
         <meta property="og:url" content="https://ithubahub.co.za/articles/nsfas-vs-corporate-bursary" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:title" content="NSFAS vs Corporate Bursary — Which is Better for You? | Ithuba" />
+        <meta name="twitter:description" content="Detailed comparison of NSFAS and corporate bursaries — coverage, work-back obligations and eligibility." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={OG_IMG} />
         <script type="application/ld+json">{JSON.stringify({

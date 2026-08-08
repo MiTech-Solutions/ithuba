@@ -44,11 +44,14 @@ export default function Guides() {
           name="description"
           content="Free guides for South African students on bursaries — how to apply, what documents you need, bursary vs scholarship, interview tips, and more."
         />
+        <meta name="description" content="Free practical guides to help South African students navigate the bursary application process from start to finish." />
         <link rel="canonical" href="https://ithubahub.co.za/guides" />
         <meta property="og:title" content="Student Guides | Ithuba" />
         <meta property="og:description" content="Free guides to help South African students find and apply for bursaries successfully." />
         <meta property="og:url" content="https://ithubahub.co.za/guides" />
         <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+        <meta name="twitter:title" content="Student Guides — Bursaries in South Africa | Ithuba" />
+        <meta name="twitter:description" content="Free practical guides to help South African students navigate the bursary application process from start to finish." />
         <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
         <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
       </Helmet>

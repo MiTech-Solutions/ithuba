@@ -7,7 +7,15 @@ export default function NotFound() {
     <>
       <Helmet>
         <title>Page Not Found | Ithuba</title>
+        <meta name="description" content="Page not found. Browse South African bursaries and scholarships on Ithuba — the free student opportunities directory." />
         <meta name="robots" content="noindex, follow" />
+              <meta property="og:title" content="Page Not Found | Ithuba" />
+        <meta property="og:description" content="The page you're looking for doesn't exist. Browse South African bursaries and scholarships on Ithuba." />
+        <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+        <meta name="twitter:title" content="Page Not Found | Ithuba" />
+        <meta name="twitter:description" content="The page you're looking for doesn't exist. Browse South African bursaries and scholarships on Ithuba." />
+        <meta name="twitter:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
+              <meta property="og:url" content="https://ithubahub.co.za/404" />
       </Helmet>
 
       <div className="mx-auto flex min-h-[70vh] max-w-xl flex-col items-center justify-center px-4 py-24 text-center sm:px-6">

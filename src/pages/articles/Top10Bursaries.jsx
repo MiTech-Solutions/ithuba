@@ -34,11 +34,14 @@ export default function ArticleTop10Bursaries() {
           name="description"
           content="The top 10 South African bursaries currently open for applications — updated live from our directory. Find open bursaries with upcoming deadlines and apply today."
         />
+        <meta name="description" content="The top 10 South African bursaries currently open for applications — updated live from our directory." />
         <link rel="canonical" href="https://ithubahub.co.za/articles/top-10-bursaries-open-now" />
         <meta property="og:title" content="Top 10 Bursaries Open Right Now in South Africa | Ithuba" />
         <meta property="og:description" content="Live list of the top 10 South African bursaries currently open for applications. Updated automatically from our directory." />
         <meta property="og:url" content="https://ithubahub.co.za/articles/top-10-bursaries-open-now" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:title" content="Top 10 Bursaries Open Right Now in South Africa | Ithuba" />
+        <meta name="twitter:description" content="A live list of the top 10 South African bursaries currently open for applications, sorted by closing date." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={OG_IMG} />
         <script type="application/ld+json">{JSON.stringify({

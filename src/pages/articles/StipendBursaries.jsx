@@ -38,6 +38,8 @@ export default function ArticleStipendBursaries() {
         <meta property="og:description" content="Which South African bursaries include a monthly stipend or living allowance? Find out what to expect and which funders are most generous." />
         <meta property="og:url" content="https://ithubahub.co.za/articles/bursaries-with-monthly-stipend" />
         <meta property="og:image" content={OG_IMG} />
+        <meta name="twitter:title" content="Bursaries That Include a Monthly Stipend in South Africa | Ithuba" />
+        <meta name="twitter:description" content="Which South African bursaries include a monthly living allowance? Find out what to expect and who's most generous." />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={OG_IMG} />
         <script type="application/ld+json">{JSON.stringify({
