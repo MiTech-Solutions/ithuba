@@ -43,6 +43,11 @@ import ArticleMultipleBursaries from "./pages/articles/MultipleBursaries";
 import ArticleRejection from "./pages/articles/Rejection";
 import ArticleWorkBack from "./pages/articles/WorkBack";
 import ArticleLawBursaries from "./pages/articles/LawBursaries";
+import ArticleTeachingBursaries from "./pages/articles/TeachingBursaries";
+import ArticleGautengBursaries from "./pages/articles/GautengBursaries";
+import ArticleWesternCapeBursaries from "./pages/articles/WesternCapeBursaries";
+import ArticleTVETBursaries from "./pages/articles/TVETBursaries";
+import ArticlePostgradBursaries from "./pages/articles/PostgradBursaries";
 
 export default function App() {
   return (
@@ -85,6 +90,11 @@ export default function App() {
                 <Route path="/articles/what-to-do-if-your-bursary-application-is-rejected" element={<ArticleRejection />} />
                 <Route path="/articles/how-to-get-out-of-a-bursary-work-back-agreement" element={<ArticleWorkBack />} />
                 <Route path="/articles/best-bursaries-for-law-students"                element={<ArticleLawBursaries />} />
+                <Route path="/articles/best-bursaries-for-teaching-students"           element={<ArticleTeachingBursaries />} />
+                <Route path="/articles/bursaries-in-gauteng"                           element={<ArticleGautengBursaries />} />
+                <Route path="/articles/bursaries-in-western-cape"                      element={<ArticleWesternCapeBursaries />} />
+                <Route path="/articles/bursaries-for-tvet-college-students"            element={<ArticleTVETBursaries />} />
+                <Route path="/articles/bursaries-for-postgraduate-students"            element={<ArticlePostgradBursaries />} />
                 <Route path="/guides"                                                    element={<Guides />} />
                 <Route path="/guides/how-to-apply-for-a-bursary"                        element={<HowToApply />} />
                 <Route path="/guides/difference-between-bursaries-and-scholarships"     element={<BursaryVsScholarship />} />

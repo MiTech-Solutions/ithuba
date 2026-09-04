@@ -113,9 +113,8 @@ export default function BursaryDetail() {
         <title>{bursary.name} | Ithuba</title>
         <meta
           name="description"
-          content={`${bursary.name} offered by ${bursary.funder}. ${bursary.field_of_study ? `Field: ${bursary.field_of_study}.` : ""} ${bursary.value ? `Value: ${bursary.value}.` : ""} ${bursary.deadline ? `Deadline: ${bursary.deadline}.` : ""} Find and apply for South African bursaries on Ithuba.`}
+          content={`${bursary.name} offered by ${bursary.funder}. ${bursary.field_of_study ? `Field: ${bursary.field_of_study}. ` : ""}${bursary.value ? `Value: ${bursary.value}. ` : ""}${bursary.deadline ? `Deadline: ${bursary.deadline}. ` : ""}Apply directly on Ithuba.`}
         />
-        <meta name="description" content={`${bursary.name} — ${bursary.funder} bursary in South Africa. ${bursary.field_of_study ? `Field: ${bursary.field_of_study}. ` : ""}Find requirements, deadlines, and apply directly on Ithuba.`} />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content={`${bursary.name} | Ithuba`} />
         <meta
@@ -126,7 +125,6 @@ export default function BursaryDetail() {
         <meta property="og:image" content="https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png" />
         <meta name="twitter:title" content={`${bursary.name} | Ithuba`} />
         <meta name="twitter:description" content={`${bursary.name} offered by ${bursary.funder}. Find requirements, deadline, and apply on Ithuba.`} />
-        <meta property="og:type" content="article" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 

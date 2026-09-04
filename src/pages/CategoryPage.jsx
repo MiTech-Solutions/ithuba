@@ -6,8 +6,12 @@ import { findCategory, matchesCategory } from "../data/categories";
 import BursaryCard from "../components/bursaries/BursaryCard";
 
 export default function CategoryPage() {
-  const { dimension, slug }           = useParams();
-  const { bursaries, loading, error } = useBursaries();
+  const { dimension: rawDimension, slug } = useParams();
+  const { bursaries, loading, error }     = useBursaries();
+
+  // Map URL dimension names to categories.js keys
+  // /bursaries/type/* was set up before categories.js used "bursary_type"
+  const dimension = rawDimension === "type" ? "bursary_type" : rawDimension;
 
   const category = findCategory(dimension, slug);
 
@@ -83,7 +87,7 @@ export default function CategoryPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/40 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 px-4 pb-6 sm:px-6 lg:px-8">
             <p className="text-xs font-semibold uppercase tracking-widest text-gold-300 mb-1">
-              {dimension === "type" ? "Funder type" : dimension === "field" ? "Field of study" : "Province"}
+              {dimension === "bursary_type" ? "Funder type" : dimension === "field" ? "Field of study" : "Province"}
             </p>
             <h1 className="font-display text-2xl font-semibold text-white sm:text-3xl">{category.label}</h1>
             {!loading && (

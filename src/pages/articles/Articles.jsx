@@ -133,6 +133,46 @@ export const articles = [
     readTime: "7 min read",
     featured: false,
   },
+  {
+    path: "/articles/best-bursaries-for-teaching-students",
+    title: "Best bursaries for teaching students in South Africa",
+    description: "The best South African bursaries for teaching and education students — Funza Lushaka, DHET, NSFAS and provincial education departments.",
+    tag: "Field Guide",
+    readTime: "7 min read",
+    featured: false,
+  },
+  {
+    path: "/articles/bursaries-in-gauteng",
+    title: "Bursaries available in Gauteng — complete list",
+    description: "Provincial and national bursaries available to students in Gauteng — Johannesburg, Pretoria, and surrounding areas. Updated regularly.",
+    tag: "Province Guide",
+    readTime: "6 min read",
+    featured: false,
+  },
+  {
+    path: "/articles/bursaries-in-western-cape",
+    title: "Bursaries available in the Western Cape — complete list",
+    description: "Provincial and national bursaries available to students in the Western Cape — Cape Town, Stellenbosch, and surrounding areas.",
+    tag: "Province Guide",
+    readTime: "6 min read",
+    featured: false,
+  },
+  {
+    path: "/articles/bursaries-for-tvet-college-students",
+    title: "Bursaries for TVET college students in South Africa",
+    description: "NSFAS, SETA funding, and corporate bursaries for TVET and trade qualification students — N4-N6 and learnership opportunities.",
+    tag: "Student Guide",
+    readTime: "7 min read",
+    featured: false,
+  },
+  {
+    path: "/articles/bursaries-for-postgraduate-students",
+    title: "Bursaries for postgraduate students in South Africa",
+    description: "Honours, master's and PhD bursaries in South Africa — NRF, university, professional body, and international postgraduate funding.",
+    tag: "Student Guide",
+    readTime: "8 min read",
+    featured: false,
+  },
 ];
 
 export default function Articles() {
