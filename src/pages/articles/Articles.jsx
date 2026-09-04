@@ -109,6 +109,30 @@ export const articles = [
     readTime: "6 min read",
     featured: false,
   },
+  {
+    path: "/articles/what-to-do-if-your-bursary-application-is-rejected",
+    title: "What to do if your bursary application is rejected",
+    description: "Bursary rejected? Here's exactly what to do next — how to request feedback, what to improve, when to reapply, and how to find alternative funding.",
+    tag: "Student Advice",
+    readTime: "7 min read",
+    featured: false,
+  },
+  {
+    path: "/articles/how-to-get-out-of-a-bursary-work-back-agreement",
+    title: "How to get out of a bursary work-back agreement",
+    description: "Want to leave before completing your work-back? Understand your options, what you'll owe, how to negotiate, and what happens if you walk away.",
+    tag: "Career Advice",
+    readTime: "8 min read",
+    featured: false,
+  },
+  {
+    path: "/articles/best-bursaries-for-law-students",
+    title: "Best bursaries for law students in South Africa",
+    description: "The best South African bursaries for law students — government departments, law firms, and NGO funding with application tips specific to law.",
+    tag: "Field Guide",
+    readTime: "7 min read",
+    featured: false,
+  },
 ];
 
 export default function Articles() {

@@ -40,6 +40,9 @@ import ArticleFinanceBursaries from "./pages/articles/FinanceBursaries";
 import ArticleStipendBursaries from "./pages/articles/StipendBursaries";
 import ArticleFailYear from "./pages/articles/FailYear";
 import ArticleMultipleBursaries from "./pages/articles/MultipleBursaries";
+import ArticleRejection from "./pages/articles/Rejection";
+import ArticleWorkBack from "./pages/articles/WorkBack";
+import ArticleLawBursaries from "./pages/articles/LawBursaries";
 
 export default function App() {
   return (
@@ -79,6 +82,9 @@ export default function App() {
                 <Route path="/articles/bursaries-with-monthly-stipend"                 element={<ArticleStipendBursaries />} />
                 <Route path="/articles/what-happens-to-your-bursary-if-you-fail"       element={<ArticleFailYear />} />
                 <Route path="/articles/can-you-hold-more-than-one-bursary"             element={<ArticleMultipleBursaries />} />
+                <Route path="/articles/what-to-do-if-your-bursary-application-is-rejected" element={<ArticleRejection />} />
+                <Route path="/articles/how-to-get-out-of-a-bursary-work-back-agreement" element={<ArticleWorkBack />} />
+                <Route path="/articles/best-bursaries-for-law-students"                element={<ArticleLawBursaries />} />
                 <Route path="/guides"                                                    element={<Guides />} />
                 <Route path="/guides/how-to-apply-for-a-bursary"                        element={<HowToApply />} />
                 <Route path="/guides/difference-between-bursaries-and-scholarships"     element={<BursaryVsScholarship />} />
