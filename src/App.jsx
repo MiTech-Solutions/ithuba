@@ -48,6 +48,8 @@ import ArticleGautengBursaries from "./pages/articles/GautengBursaries";
 import ArticleWesternCapeBursaries from "./pages/articles/WesternCapeBursaries";
 import ArticleTVETBursaries from "./pages/articles/TVETBursaries";
 import ArticlePostgradBursaries from "./pages/articles/PostgradBursaries";
+import ArticleCorporateEmploymentBursaries from "./pages/articles/CorporateEmploymentBursaries";
+import ArticleGovernmentBursaries from "./pages/articles/GovernmentBursaries";
 
 export default function App() {
   return (
@@ -95,6 +97,8 @@ export default function App() {
                 <Route path="/articles/bursaries-in-western-cape"                      element={<ArticleWesternCapeBursaries />} />
                 <Route path="/articles/bursaries-for-tvet-college-students"            element={<ArticleTVETBursaries />} />
                 <Route path="/articles/bursaries-for-postgraduate-students"            element={<ArticlePostgradBursaries />} />
+                <Route path="/articles/corporate-bursaries-with-guaranteed-employment" element={<ArticleCorporateEmploymentBursaries />} />
+                <Route path="/articles/government-bursaries-south-africa"              element={<ArticleGovernmentBursaries />} />
                 <Route path="/guides"                                                    element={<Guides />} />
                 <Route path="/guides/how-to-apply-for-a-bursary"                        element={<HowToApply />} />
                 <Route path="/guides/difference-between-bursaries-and-scholarships"     element={<BursaryVsScholarship />} />

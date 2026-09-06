@@ -173,6 +173,22 @@ export const articles = [
     readTime: "8 min read",
     featured: false,
   },
+  {
+    path: "/articles/corporate-bursaries-with-guaranteed-employment",
+    title: "Corporate bursaries with guaranteed employment in South Africa",
+    description: "Corporate bursaries that include a guaranteed employment offer after graduation — Eskom, Sasol, Anglo American, Standard Bank, MTN and more with work-back details.",
+    tag: "Career Guide",
+    readTime: "8 min read",
+    featured: false,
+  },
+  {
+    path: "/articles/government-bursaries-south-africa",
+    title: "Government bursaries you can apply for right now in South Africa",
+    description: "A complete list of South African government bursaries — NSFAS, Funza Lushaka, Department of Health, Eskom, Transnet and more with deadlines and application details.",
+    tag: "Funding Guide",
+    readTime: "8 min read",
+    featured: false,
+  },
 ];
 
 export default function Articles() {
