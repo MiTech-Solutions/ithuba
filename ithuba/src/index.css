@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #faf8f3;
+    --bg-secondary: #f2f7f2;
+    --border: #d4e4d4;
+    --text-primary: #19341b;
+    --text-secondary: #3f7e42;
+    --text-muted: #6b7a6c;
+  }
+
+  .dark {
+    --bg-primary: #0d1f0e;
+    --bg-secondary: #19341b;
+    --border: #254f28;
+    --text-primary: #f2f7f2;
+    --text-secondary: #96c097;
+    --text-muted: #6b9e6d;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  }
+
+  /* Smooth all colour-related transitions when switching theme */
+  *, *::before, *::after {
+    transition-property: background-color, border-color, color, box-shadow;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+  }
+
+  /* But don't slow down intentional UI transitions — let component styles win */
+  [class*="transition-"], [class*="animate-"] {
+    transition-duration: revert;
+  }
+}
+
+@layer utilities {
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideInLeft {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(0); }
+  }
+
+  @keyframes pulse-once {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.14); }
+    70%  { transform: scale(0.97); }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
+  }
+
+  .badge-shimmer {
+    background: linear-gradient(
+      90deg,
+      #ca8f12 0%,
+      #f3de8a 40%,
+      #e5b020 50%,
+      #f3de8a 60%,
+      #ca8f12 100%
+    );
+    background-size: 200% auto;
+    animation: shimmer 2.8s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .dark .badge-shimmer {
+    background: linear-gradient(
+      90deg,
+      #a86d0d 0%,
+      #edc847 40%,
+      #e5b020 50%,
+      #edc847 60%,
+      #a86d0d 100%
+    );
+    background-size: 200% auto;
+    animation: shimmer 2.8s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
