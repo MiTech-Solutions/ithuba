@@ -7,4 +7,8 @@
 /ads.txt /ads.txt 200
 
 # SPA catch-all — must be last
+<<<<<<< HEAD
 /* /index.html 200
+=======
+/* /index.html 200
+>>>>>>> 78530d7 (try again)
