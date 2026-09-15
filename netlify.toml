@@ -24,6 +24,12 @@
   to = "/.netlify/functions/newsletter"
   status = 200
 
+# Static files that must NOT be caught by SPA catch-all
+[[redirects]]
+  from = "/ads.txt"
+  to = "/ads.txt"
+  status = 200
+
 # SPA routing — catch-all must be LAST
 [[redirects]]
   from = "/*"
