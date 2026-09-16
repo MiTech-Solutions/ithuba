@@ -81,7 +81,7 @@ export default function BursaryDetail() {
 
   const colorClass = typeColors[bursary.funder_type?.toLowerCase()] || typeColors.ngo;
 
-  const canonicalUrl = `https://ithubahub.co.za/bursaries/${slug}`;
+  const canonicalUrl = `https://ithubahub.co.za/bursaries/${slugify(bursary.name)}`;
 
   // ── JSON-LD structured data ───────────────────────────────────────────────
   const jsonLd = {

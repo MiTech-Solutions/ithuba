@@ -65,7 +65,7 @@ export default function ScholarshipDetail() {
     ? scholarship.scholarship_type.charAt(0).toUpperCase() + scholarship.scholarship_type.slice(1)
     : "Scholarship";
   const colorClass  = typeColors[scholarship.scholarship_type?.toLowerCase()] || typeColors.community;
-  const canonicalUrl = `https://ithubahub.co.za/scholarships/${slug}`;
+  const canonicalUrl = `https://ithubahub.co.za/scholarships/${slugify(scholarship.name)}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
