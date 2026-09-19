@@ -4,9 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Search, BookOpen, Users, Star, Briefcase, GraduationCap, MapPin } from "lucide-react";
 import { useBursaries } from "../hooks/useBursaries";
 import { useScholarships } from "../hooks/useScholarships";
+import { useInternships } from "../hooks/useInternships";
 import { matchesCategory } from "../data/categories";
 import BursaryCard from "../components/bursaries/BursaryCard";
 import ScholarshipCard from "../components/scholarships/ScholarshipCard";
+import InternshipCard from "../components/internships/InternshipCard";
 import NewsletterSignup from "../components/common/NewsletterSignup";
 import TrustBar from "../components/home/TrustBar";
 
@@ -102,18 +104,19 @@ const HIGHLIGHT_CATEGORIES = [
 export default function Home() {
   const { bursaries, loading: bLoading }       = useBursaries();
   const { scholarships, loading: sLoading }    = useScholarships();
+  const { internships, loading: iLoading }     = useInternships();
 
   const featuredBursaries    = bursaries.filter((b) => b.featured === "true").slice(0, 3);
   const featuredScholarships = scholarships.filter((s) => s.featured === "true").slice(0, 3);
-  const loading              = bLoading || sLoading;
+  const loading              = bLoading || sLoading || iLoading;
 
-  // Latest = last 3 rows of sheet (newest added at bottom)
-  // Exclude any that are already in featured so there's no duplication
-  const featuredIds   = new Set(featuredBursaries.map((b) => b.id || b.name));
+  // Latest = last 3 rows of each sheet (newest added at bottom)
+  const featuredIds     = new Set(featuredBursaries.map((b) => b.id || b.name));
   const latestBursaries = bursaries
     .filter((b) => !featuredIds.has(b.id || b.name))
     .slice(-3)
-    .reverse(); // most recent first
+    .reverse();
+  const latestInternships = internships.slice(-3).reverse();
 
   function countFor(dimension, slug) {
     if (bLoading) return null;
@@ -217,7 +220,7 @@ export default function Home() {
               <p className="text-xs font-semibold uppercase tracking-widest text-forest-500 dark:text-forest-400">Just added</p>
             </div>
             <h2 className="font-display text-2xl font-semibold text-forest-900 dark:text-forest-50 sm:text-3xl">
-              Latest opportunities
+              Latest bursaries
             </h2>
           </div>
           <Link to="/bursaries" className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-forest-600 dark:text-forest-400 hover:text-forest-900 dark:hover:text-white transition">
@@ -239,6 +242,37 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {/* ── Latest internships (only shown when data exists) ─────────── */}
+      {!iLoading && latestInternships.length > 0 && (
+        <section className="mx-auto max-w-7xl px-4 pt-12 pb-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-6">
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500" />
+                </span>
+                <p className="text-xs font-semibold uppercase tracking-widest text-forest-500 dark:text-forest-400">Just added</p>
+              </div>
+              <h2 className="font-display text-2xl font-semibold text-forest-900 dark:text-forest-50 sm:text-3xl">
+                Latest internships
+              </h2>
+            </div>
+            <Link to="/internships" className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-forest-600 dark:text-forest-400 hover:text-forest-900 dark:hover:text-white transition">
+              View all <ArrowRight size={14} />
+            </Link>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {latestInternships.map((i, idx) => <InternshipCard key={i.name || idx} internship={i} index={idx} />)}
+          </div>
+          <div className="mt-4 sm:hidden">
+            <Link to="/internships" className="inline-flex items-center gap-1.5 text-sm font-medium text-forest-600 dark:text-forest-400 hover:text-forest-900 dark:hover:text-white transition">
+              View all internships <ArrowRight size={13} />
+            </Link>
+          </div>
+        </section>
+      )}
 
       {/* ── Featured bursaries ───────────────────────────────────────── */}
       {(bLoading || featuredBursaries.length > 0) && (

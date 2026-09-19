@@ -46,7 +46,12 @@
   <url><loc>https://ithubahub.co.za/articles/bursaries-with-no-closing-date</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ithubahub.co.za/articles/merit-scholarship-vs-need-based-scholarship</loc><lastmod>2026-09-06</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
 
-  <!-- Opportunity pages (unified bursaries + scholarships by field) -->
+  <url><loc>https://ithubahub.co.za/internships</loc><lastmod>2026-09-18</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <!-- Internship type pages -->
+  <url><loc>https://ithubahub.co.za/opportunities/internship_type/graduate</loc><lastmod>2026-09-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithubahub.co.za/opportunities/internship_type/student</loc><lastmod>2026-09-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithubahub.co.za/opportunities/internship_type/learnership</loc><lastmod>2026-09-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ithubahub.co.za/opportunities/internship_type/government</loc><lastmod>2026-09-18</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ithubahub.co.za/opportunities/field/engineering</loc><lastmod>2026-07-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ithubahub.co.za/opportunities/field/finance</loc><lastmod>2026-07-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ithubahub.co.za/opportunities/field/it</loc><lastmod>2026-07-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>

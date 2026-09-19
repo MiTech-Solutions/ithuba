@@ -1,47 +1,54 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, Briefcase, GraduationCap, MapPin, Award } from "lucide-react";
+import { ArrowRight, Briefcase, GraduationCap, MapPin, Award, Building2 } from "lucide-react";
 import { useOpportunities } from "../hooks/useOpportunities";
 import { CATEGORY_TYPES, matchesCategory } from "../data/categories";
 
 const OG_IMG = "https://i.postimg.cc/d3T437Xk/45C7EB18-47F5-4CD3-9509-3A1092AF188E.png";
 
 const dimensionIcons = {
-  bursary_type:    Briefcase,
+  bursary_type:     Briefcase,
   scholarship_type: Award,
-  field:           GraduationCap,
-  province:        MapPin,
+  internship_type:  Building2,
+  field:            GraduationCap,
+  province:         MapPin,
 };
 
 const dimensionLabels = {
-  bursary_type:    "Bursaries by funder type",
+  bursary_type:     "Bursaries by funder type",
   scholarship_type: "Scholarships by type",
-  field:           "By field of study",
-  province:        "Bursaries by province",
+  internship_type:  "Internships by type",
+  field:            "By field of study",
+  province:         "Bursaries by province",
 };
 
 const dimensionDescriptions = {
-  bursary_type:    "Browse bursaries by who funds them — government departments, private companies, or NGOs and foundations.",
+  bursary_type:     "Browse bursaries by who funds them — government departments, private companies, or NGOs and foundations.",
   scholarship_type: "Browse scholarships by award type — merit-based, need-based, community, or arts.",
-  field:           "Browse both bursaries and scholarships by your field of study.",
-  province:        "Browse bursaries by the province they're available in, including national bursaries open to all.",
+  internship_type:  "Browse internships by type — graduate programmes, student vacation work, learnerships, or government internships.",
+  field:            "Browse bursaries, scholarships, and internships by your field of study.",
+  province:         "Browse bursaries by the province they're available in, including national bursaries open to all.",
 };
 
 export default function Categories() {
-  const { bursaries, scholarships, loading } = useOpportunities();
+  const { bursaries, scholarships, internships, loading } = useOpportunities();
 
   function countFor(dimension, slug) {
     if (loading) return null;
-    const bCount = dimension === "scholarship_type"
+    const bCount = (dimension === "scholarship_type" || dimension === "internship_type")
       ? 0
       : bursaries.filter((b) => matchesCategory(b, dimension, slug)).length;
-    const sCount = (dimension === "bursary_type" || dimension === "province")
+    const sCount = (dimension === "bursary_type" || dimension === "province" || dimension === "internship_type")
       ? 0
       : scholarships.filter((s) => matchesCategory(s,
-          dimension === "scholarship_type" ? "scholarship_type" : "field",
-          slug
+          dimension === "scholarship_type" ? "scholarship_type" : "field", slug
         )).length;
-    return { bCount, sCount, total: bCount + sCount };
+    const iCount = (dimension === "bursary_type" || dimension === "scholarship_type" || dimension === "province")
+      ? 0
+      : internships.filter((i) => matchesCategory(i,
+          dimension === "internship_type" ? "internship_type" : "field", slug
+        )).length;
+    return { bCount, sCount, iCount, total: bCount + sCount + iCount };
   }
 
   const jsonLd = {
@@ -110,6 +117,8 @@ export default function Categories() {
                       ? `/bursaries/type/${cat.slug}`
                       : dimension === "scholarship_type"
                       ? `/scholarships?type=${cat.slug}`
+                      : dimension === "internship_type"
+                      ? `/internships?type=${cat.slug}`
                       : `/opportunities/${dimension}/${cat.slug}`;
 
                     return (
@@ -136,6 +145,11 @@ export default function Categories() {
                                   {counts.sCount}S
                                 </span>
                               )}
+                              {counts.iCount > 0 && (
+                                <span className="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900/30 px-2 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-300">
+                                  {counts.iCount}I
+                                </span>
+                              )}
                             </div>
                           ) : (
                             <span className="shrink-0 inline-flex items-center rounded-full bg-forest-100 dark:bg-forest-800 px-2 py-0.5 text-xs font-medium text-forest-600 dark:text-forest-300">
@@ -154,7 +168,6 @@ export default function Categories() {
                   })}
                 </div>
 
-                {/* Legend for field section */}
                 {dimension === "field" && (
                   <div className="mt-3 flex items-center gap-4 text-xs text-forest-400 dark:text-forest-500">
                     <div className="flex items-center gap-1.5">
@@ -164,6 +177,10 @@ export default function Categories() {
                     <div className="flex items-center gap-1.5">
                       <span className="inline-flex items-center rounded-full bg-gold-100 dark:bg-gold-900/40 px-2 py-0.5 text-xs font-medium text-gold-700 dark:text-gold-300">S</span>
                       Scholarships
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900/30 px-2 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-300">I</span>
+                      Internships
                     </div>
                   </div>
                 )}
@@ -184,6 +201,9 @@ export default function Categories() {
             </Link>
             <Link to="/scholarships" className="inline-flex items-center gap-2 rounded-xl border border-forest-300 dark:border-forest-700 px-6 py-3 text-sm font-medium text-forest-700 dark:text-forest-300 hover:bg-forest-100 dark:hover:bg-forest-800 transition">
               Browse scholarships <ArrowRight size={14} />
+            </Link>
+            <Link to="/internships" className="inline-flex items-center gap-2 rounded-xl border border-forest-300 dark:border-forest-700 px-6 py-3 text-sm font-medium text-forest-700 dark:text-forest-300 hover:bg-forest-100 dark:hover:bg-forest-800 transition">
+              Browse internships <ArrowRight size={14} />
             </Link>
           </div>
         </div>

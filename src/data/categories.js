@@ -64,7 +64,41 @@ export const CATEGORY_TYPES = {
     ],
   },
 
-  // ── Field of study (unified — applies to both) ────────────────────────────
+  // ── Internship types ─────────────────────────────────────────────────────
+  internship_type: {
+    label: "By internship type",
+    param: "internship-type",
+    kind: "internship",
+    filterKey: "type",
+    values: [
+      {
+        slug: "graduate",
+        label: "Graduate Internships",
+        description: "12-month internships for students who have recently completed their degree. Structured work experience with a monthly stipend.",
+        metaDescription: "Browse graduate internships in South Africa for recent graduates. 12-month structured programmes with stipends across all sectors.",
+      },
+      {
+        slug: "student",
+        label: "Student Internships",
+        description: "Vacation work and in-service training for students currently enrolled in a degree or diploma. Typically 2–3 months over December/January.",
+        metaDescription: "Browse student internships and vacation work in South Africa for current students. Short-term placements during university holidays.",
+      },
+      {
+        slug: "learnership",
+        label: "Learnerships",
+        description: "SETA-funded work-based learning programmes that combine practical experience with a formal NQF qualification and a monthly stipend.",
+        metaDescription: "Browse learnerships in South Africa — SETA-funded work-based learning programmes with stipends and formal NQF qualifications.",
+      },
+      {
+        slug: "government",
+        label: "Government Internships",
+        description: "Internship programmes offered by government departments and state-owned entities across all nine provinces.",
+        metaDescription: "Browse government internships in South Africa — DPSA and provincial department programmes for graduates and students.",
+      },
+    ],
+  },
+
+  // ── Field of study (unified — applies to all) ─────────────────────────────
   field: {
     label: "By field of study",
     param: "field",

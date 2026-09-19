@@ -33,6 +33,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-forest-600 dark:text-forest-400">
               <li><Link to="/bursaries" className="hover:text-forest-900 dark:hover:text-white transition">All Bursaries</Link></li>
               <li><Link to="/scholarships" className="hover:text-forest-900 dark:hover:text-white transition">All Scholarships</Link></li>
+              <li><Link to="/internships" className="hover:text-forest-900 dark:hover:text-white transition">All Internships</Link></li>
               <li><Link to="/bursaries?type=government" className="hover:text-forest-900 dark:hover:text-white transition">Government Bursaries</Link></li>
               <li><Link to="/bursaries?type=corporate" className="hover:text-forest-900 dark:hover:text-white transition">Corporate Bursaries</Link></li>
               <li><Link to="/bursaries?type=ngo" className="hover:text-forest-900 dark:hover:text-white transition">NGO Bursaries</Link></li>

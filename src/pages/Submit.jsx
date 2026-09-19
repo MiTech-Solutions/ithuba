@@ -12,7 +12,10 @@ const SCHOLARSHIP_TYPES = ["Merit", "Need-based", "Athletic", "Arts", "Community
 
 export default function Submit() {
   const [searchParams]              = useSearchParams();
-  const [type, setType]             = useState(searchParams.get("type") === "scholarship" ? "scholarship" : "bursary");
+  const [type, setType] = useState(
+    searchParams.get("type") === "scholarship" ? "scholarship" :
+    searchParams.get("type") === "internship"  ? "internship"  : "bursary"
+  );
   const [submitted, setSubmitted]   = useState(false);
   const [loading, setLoading]       = useState(false);
   const [error, setError]           = useState(null);
@@ -112,27 +115,17 @@ export default function Submit() {
 
         {/* Type toggle */}
         <div className="mb-6 flex rounded-2xl border border-forest-200 dark:border-forest-700 bg-forest-50 dark:bg-forest-900 p-1.5 gap-1.5">
-          <button
-            type="button"
-            onClick={() => setType("bursary")}
-            className={`flex-1 rounded-xl py-2.5 text-sm font-semibold transition ${
-              type === "bursary"
-                ? "bg-forest-600 dark:bg-forest-500 text-white shadow-sm"
-                : "text-forest-600 dark:text-forest-300 hover:bg-forest-100 dark:hover:bg-forest-800"
-            }`}
-          >
+          <button type="button" onClick={() => setType("bursary")}
+            className={`flex-1 rounded-xl py-2.5 text-sm font-semibold transition ${type === "bursary" ? "bg-forest-600 dark:bg-forest-500 text-white shadow-sm" : "text-forest-600 dark:text-forest-300 hover:bg-forest-100 dark:hover:bg-forest-800"}`}>
             Bursary
           </button>
-          <button
-            type="button"
-            onClick={() => setType("scholarship")}
-            className={`flex-1 rounded-xl py-2.5 text-sm font-semibold transition ${
-              type === "scholarship"
-                ? "bg-forest-600 dark:bg-forest-500 text-white shadow-sm"
-                : "text-forest-600 dark:text-forest-300 hover:bg-forest-100 dark:hover:bg-forest-800"
-            }`}
-          >
+          <button type="button" onClick={() => setType("scholarship")}
+            className={`flex-1 rounded-xl py-2.5 text-sm font-semibold transition ${type === "scholarship" ? "bg-forest-600 dark:bg-forest-500 text-white shadow-sm" : "text-forest-600 dark:text-forest-300 hover:bg-forest-100 dark:hover:bg-forest-800"}`}>
             Scholarship
+          </button>
+          <button type="button" onClick={() => setType("internship")}
+            className={`flex-1 rounded-xl py-2.5 text-sm font-semibold transition ${type === "internship" ? "bg-forest-600 dark:bg-forest-500 text-white shadow-sm" : "text-forest-600 dark:text-forest-300 hover:bg-forest-100 dark:hover:bg-forest-800"}`}>
+            Internship
           </button>
         </div>
 

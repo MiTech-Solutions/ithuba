@@ -4,12 +4,16 @@ import { Sun, Moon, Menu, X, ChevronDown } from "lucide-react";
 import { useDarkMode } from "../../hooks/useDarkMode";
 
 const navItems = [
-  { label: "Bursaries",        path: "/bursaries" },
-  { label: "Scholarships",     path: "/scholarships" },
   { label: "Categories",       path: "/categories" },
   { label: "About",            path: "/about" },
   { label: "Contact",          path: "/contact" },
-  { label: "Submit a Bursary", path: "/submit" },
+  { label: "Submit",           path: "/submit" },
+];
+
+const opportunityItems = [
+  { label: "Bursaries",    path: "/bursaries",    description: "Government, corporate & NGO funding" },
+  { label: "Scholarships", path: "/scholarships", description: "Merit & need-based awards" },
+  { label: "Internships",  path: "/internships",  description: "Graduate, student & learnerships" },
 ];
 
 const resourceItems = [
@@ -18,14 +22,17 @@ const resourceItems = [
 ];
 
 export default function Navbar() {
-  const [dark, setDark]             = useDarkMode();
-  const [menuOpen, setMenuOpen]     = useState(false);
-  const [scrolled, setScrolled]     = useState(false);
-  const [dropdownOpen, setDropdown] = useState(false);
-  const dropdownRef                 = useRef(null);
-  const location                    = useLocation();
+  const [dark, setDark]               = useDarkMode();
+  const [menuOpen, setMenuOpen]       = useState(false);
+  const [scrolled, setScrolled]       = useState(false);
+  const [dropdownOpen, setDropdown]   = useState(false);
+  const [oppDropdown, setOppDropdown] = useState(false);
+  const dropdownRef                   = useRef(null);
+  const oppDropdownRef                = useRef(null);
+  const location                      = useLocation();
 
-  const isResourceActive = resourceItems.some((r) => location.pathname.startsWith(r.path));
+  const isResourceActive    = resourceItems.some((r) => location.pathname.startsWith(r.path));
+  const isOpportunityActive = opportunityItems.some((o) => location.pathname.startsWith(o.path));
 
   useEffect(() => {
     function onScroll() { setScrolled(window.scrollY > 12); }
@@ -33,19 +40,22 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close dropdown on outside click
+  // Close dropdowns on outside click
   useEffect(() => {
     function handleClick(e) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setDropdown(false);
+      }
+      if (oppDropdownRef.current && !oppDropdownRef.current.contains(e.target)) {
+        setOppDropdown(false);
       }
     }
     document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
-  // Close dropdown on route change
-  useEffect(() => { setDropdown(false); setMenuOpen(false); }, [location.pathname]);
+  // Close dropdowns on route change
+  useEffect(() => { setDropdown(false); setOppDropdown(false); setMenuOpen(false); }, [location.pathname]);
 
   const linkClass = ({ isActive }) =>
     `relative text-sm font-medium transition-colors duration-200 ${
@@ -73,6 +83,35 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-6 md:flex">
+
+          {/* Opportunities dropdown */}
+          <div ref={oppDropdownRef} className="relative">
+            <button
+              onClick={() => setOppDropdown(!oppDropdown)}
+              className={`relative inline-flex items-center gap-1 text-sm font-medium transition-colors duration-200 ${
+                isOpportunityActive
+                  ? "text-gold-500 dark:text-gold-400"
+                  : "text-forest-700 dark:text-forest-300 hover:text-forest-900 dark:hover:text-white"
+              }`}
+            >
+              Opportunities
+              <ChevronDown size={14} className={`transition-transform duration-200 ${oppDropdown ? "rotate-180" : "rotate-0"}`} />
+              <span className={`absolute -bottom-[18px] left-0 h-0.5 rounded-full bg-gold-500 dark:bg-gold-400 transition-all duration-300 ease-out ${isOpportunityActive ? "w-full opacity-100" : "w-0 opacity-0"}`} />
+            </button>
+            {oppDropdown && (
+              <div className="absolute top-[calc(100%+16px)] left-1/2 -translate-x-1/2 w-56 rounded-2xl border border-forest-200 dark:border-forest-700 bg-white dark:bg-forest-900 shadow-xl shadow-forest-900/10 dark:shadow-forest-950/40 overflow-hidden animate-[fadeSlideUp_0.2s_ease]">
+                {opportunityItems.map((item) => (
+                  <Link key={item.path} to={item.path}
+                    className="flex flex-col px-4 py-3.5 hover:bg-forest-50 dark:hover:bg-forest-800 transition border-b border-forest-100 dark:border-forest-800 last:border-0"
+                  >
+                    <span className="text-sm font-semibold text-forest-900 dark:text-forest-50">{item.label}</span>
+                    <span className="text-xs text-forest-500 dark:text-forest-400 mt-0.5">{item.description}</span>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           {navItems.map((item) => (
             <NavLink key={item.path} to={item.path} className={linkClass}>
               {({ isActive }) => (
@@ -173,13 +212,30 @@ export default function Navbar() {
               </NavLink>
             ))}
 
+            {/* Opportunities section in mobile */}
+            <div className="mt-1 border-t border-forest-100 dark:border-forest-800 pt-2">
+              <p className="px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-forest-400 dark:text-forest-500">Opportunities</p>
+              {opportunityItems.map((item) => (
+                <NavLink key={item.path} to={item.path}
+                  className={({ isActive }) =>
+                    `px-3 py-2.5 rounded-xl text-sm font-medium transition flex items-center justify-between ${
+                      isActive
+                        ? "bg-forest-100 dark:bg-forest-800 text-gold-500 dark:text-gold-400"
+                        : "text-forest-700 dark:text-forest-300 hover:bg-forest-50 dark:hover:bg-forest-800"
+                    }`
+                  }
+                >
+                  <span>{item.label}</span>
+                  <span className="text-xs text-forest-400 dark:text-forest-500">{item.description}</span>
+                </NavLink>
+              ))}
+            </div>
+
             {/* Resources section in mobile */}
             <div className="mt-1 border-t border-forest-100 dark:border-forest-800 pt-2">
               <p className="px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-forest-400 dark:text-forest-500">Resources</p>
               {resourceItems.map((item) => (
-                <NavLink
-                  key={item.path}
-                  to={item.path}
+                <NavLink key={item.path} to={item.path}
                   className={({ isActive }) =>
                     `px-3 py-2.5 rounded-xl text-sm font-medium transition flex items-center justify-between ${
                       isActive
@@ -195,7 +251,7 @@ export default function Navbar() {
             </div>
 
             <Link
-              to="/bursaries"
+              to="/internships"
               className="mt-2 inline-flex items-center justify-center rounded-xl bg-forest-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-forest-700 transition"
             >
               Browse opportunities

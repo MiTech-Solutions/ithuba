@@ -6,8 +6,10 @@ import ScrollToTop from "./components/common/ScrollToTop";
 import CookieBanner from "./components/common/CookieBanner";
 import Home from "./pages/Home";
 import Bursaries from "./pages/Bursaries";
+import Categories from "./pages/Categories"
 import BursaryDetail from "./pages/BursaryDetail";
-import Categories from "./pages/Categories";
+import Internships from "./pages/Internships";
+import InternshipDetail from "./pages/InternshipDetail";
 import CategoryPage from "./pages/CategoryPage";
 import OpportunityPage from "./pages/OpportunityPage";
 import Submit from "./pages/Submit";
@@ -67,6 +69,8 @@ export default function App() {
                 <Route path="/bursaries"                                                 element={<Bursaries />} />
                 <Route path="/bursaries/:slug"                                           element={<BursaryDetail />} />
                 <Route path="/bursaries/:dimension/:slug"                                element={<CategoryPage />} />
+                <Route path="/internships"                                                element={<Internships />} />
+                <Route path="/internships/:slug"                                          element={<InternshipDetail />} />
                 <Route path="/categories"                                                element={<Categories />} />
                 <Route path="/opportunities/:dimension/:slug"                            element={<OpportunityPage />} />
                 <Route path="/submit"                                                    element={<Submit />} />

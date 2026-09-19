@@ -6,6 +6,7 @@ import { useOpportunities } from "../hooks/useOpportunities";
 import { findCategory, matchesCategory } from "../data/categories";
 import BursaryCard from "../components/bursaries/BursaryCard";
 import ScholarshipCard from "../components/scholarships/ScholarshipCard";
+import InternshipCard from "../components/internships/InternshipCard";
 import EmptyState from "../components/common/EmptyState";
 import { slugify } from "../utils/slug";
 
@@ -14,7 +15,7 @@ const BANNER_IMG = "https://images.unsplash.com/photo-1537202108838-e7072bad1927
 
 export default function OpportunityPage() {
   const { dimension, slug }                              = useParams();
-  const { bursaries, scholarships, loading }             = useOpportunities();
+  const { bursaries, scholarships, internships, loading } = useOpportunities();
 
   const category = findCategory(dimension, slug);
 
@@ -30,11 +31,20 @@ export default function OpportunityPage() {
     if (dimension === "scholarship_type") {
       return scholarships.filter((s) => matchesCategory(s, dimension, slug));
     }
-    // field — match scholarships by field too
     return scholarships.filter((s) => matchesCategory(s, "field", slug));
   }, [scholarships, dimension, slug]);
 
-  const totalCount = filteredBursaries.length + filteredScholarships.length;
+  // ── Filter internships ────────────────────────────────────────────────────
+  const filteredInternships = useMemo(() => {
+    if (dimension === "bursary_type" || dimension === "scholarship_type" || dimension === "province") return [];
+    if (dimension === "internship_type") {
+      return internships.filter((i) => matchesCategory(i, dimension, slug));
+    }
+    // field — match internships by field too
+    return internships.filter((i) => matchesCategory(i, "field", slug));
+  }, [internships, dimension, slug]);
+
+  const totalCount = filteredBursaries.length + filteredScholarships.length + filteredInternships.length;
 
   if (!category) {
     return (
@@ -100,7 +110,7 @@ export default function OpportunityPage() {
                 {totalCount} {totalCount === 1 ? "opportunity" : "opportunities"} found
                 {filteredBursaries.length > 0 && filteredScholarships.length > 0 && (
                   <span className="ml-2 text-forest-400">
-                    ({filteredBursaries.length} {filteredBursaries.length === 1 ? "bursary" : "bursaries"} · {filteredScholarships.length} {filteredScholarships.length === 1 ? "scholarship" : "scholarships"})
+                    ({filteredBursaries.length > 0 && `${filteredBursaries.length}B`}{filteredScholarships.length > 0 && ` · ${filteredScholarships.length}S`}{filteredInternships.length > 0 && ` · ${filteredInternships.length}I`})
                   </span>
                 )}
               </p>
@@ -188,6 +198,34 @@ export default function OpportunityPage() {
           </section>
         )}
 
+        {/* Internships section */}
+        {!loading && filteredInternships.length > 0 && (
+          <section className="mb-10">
+            <div className="flex items-end justify-between mb-5">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-forest-500 dark:text-forest-400">Internships</p>
+                <h2 className="mt-1 font-display text-xl font-semibold text-forest-900 dark:text-forest-50">
+                  {category.label} internships
+                  <span className="ml-2 text-base font-normal text-forest-400 dark:text-forest-500">({filteredInternships.length})</span>
+                </h2>
+              </div>
+              <Link to="/internships" className="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-forest-600 dark:text-forest-400 hover:text-forest-900 dark:hover:text-white transition">
+                All internships <ArrowRight size={13} />
+              </Link>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {filteredInternships.map((i, idx) => (
+                <InternshipCard key={i.name || `i-${idx}`} internship={i} index={idx} />
+              ))}
+            </div>
+            <div className="mt-5 sm:hidden">
+              <Link to="/internships" className="inline-flex items-center gap-1 text-sm font-medium text-forest-600 dark:text-forest-400 hover:text-forest-900 dark:hover:text-white transition">
+                All internships <ArrowRight size={13} />
+              </Link>
+            </div>
+          </section>
+        )}
+
         {/* Bottom CTA */}
         {!loading && totalCount > 0 && (
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
@@ -196,6 +234,9 @@ export default function OpportunityPage() {
             </Link>
             <Link to="/scholarships" className="inline-flex items-center gap-2 rounded-xl border border-forest-300 dark:border-forest-700 px-5 py-3 text-sm font-medium text-forest-700 dark:text-forest-300 hover:bg-forest-100 dark:hover:bg-forest-800 transition">
               Browse all scholarships <ArrowRight size={14} />
+            </Link>
+            <Link to="/internships" className="inline-flex items-center gap-2 rounded-xl border border-forest-300 dark:border-forest-700 px-5 py-3 text-sm font-medium text-forest-700 dark:text-forest-300 hover:bg-forest-100 dark:hover:bg-forest-800 transition">
+              Browse all internships <ArrowRight size={14} />
             </Link>
           </div>
         )}
